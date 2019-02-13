@@ -1,0 +1,21 @@
+{{> header}}
+
+<h1>PHPDocs "{{ captured.folder }}" folders.</h1>
+
+<p>
+	<a href="../">
+		{{ xo:img name="eject" }} Parent Directory
+	</a>
+</p>
+
+{{ xo:get_folders folder="PHPDocs" }}
+
+{{ #folders }}
+	<p>
+		<a href="/PHPDocs/{{ ../captured.folder }}/{{ xo:pathinfo option="filename" }}/index.html">
+			{{ xo:img name="BeOS_folder" }} {{ xo:pathinfo option="filename" }}
+		</a>
+	</p>
+{{ /folders }}
+
+{{> footer}}

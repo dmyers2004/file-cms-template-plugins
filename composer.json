@@ -1,0 +1,11 @@
+{
+	"autoload": {
+		"psr-4": {"xo\\": "./xo/src"},
+		"files": ["xo/src/Common.php"]
+	},
+	"minimum-stability": "dev",
+		"require": {
+			"michelf/php-markdown": "^1.8",
+			"zordius/lightncandy": "dev-master"
+		}
+}

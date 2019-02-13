@@ -1,0 +1,21 @@
+{{> header}}
+
+<h1>Lines of Code "{{ captured.folder }}" folders.</h1>
+
+<p>
+	<a href="../">
+		{{ xo:img name="eject" }} Parent Directory
+	</a>
+</p>
+
+{{ xo:get_folders folder="Lines of Code" }}
+
+{{ #folders }}
+	<p>
+		<a href="/Lines%20of%20Code/{{ ../captured.folder }}/{{ xo:pathinfo option="filename" }}/index.html">
+			{{ xo:img name="BeOS_folder" }} {{ xo:pathinfo option="filename" }}
+		</a>
+	</p>
+{{ /folders }}
+
+{{> footer}}

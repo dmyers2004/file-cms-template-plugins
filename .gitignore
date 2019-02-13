@@ -1,0 +1,5 @@
+/cache
+/composer.lock
+/vendor
+.DS_Store
+xo/R&D/*

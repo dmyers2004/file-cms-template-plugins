@@ -1,0 +1,21 @@
+{{> header}}
+
+<h1>Unit Test Results</h1>
+
+<p>
+	<a href="../">
+		{{ xo:img name="eject" }} Parent Directory
+	</a>
+</p>
+
+{{ xo:get_folders folder="Unit Tests" }}
+
+{{ #folders }}
+	<p>
+		<a href="/Unit%20Tests/{{ xo:pathinfo option="filename" }}/testdox.html">
+			{{ xo:img name="BeOS_Customize_wrench" }} {{ xo:pathinfo option="filename" }}
+		</a>
+	</p>
+{{ /folders }}
+
+{{> footer}}

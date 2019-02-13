@@ -1,0 +1,30 @@
+{{> header}}
+
+<h1>PHPDoc</h1>
+
+<p>
+	<a href="../">
+		{{ xo:img name="eject" }} Parent Directory
+	</a>
+</p>
+
+
+<p>
+	<a href="/PHPDocs/Codeigniter/index.html">
+		{{ xo:img name="Library" }} CodeIgniter
+	</a>
+</p>
+
+{{ xo:get_folders folder="PHPDocs" }}
+
+{{ #folders }}
+	{{ #if_ne . "/var/www/phpdoc/app/public/PHPDocs/Codeigniter" }}
+	<p>
+		<a href="/PHPDocs/{{ xo:pathinfo option="filename" }}">
+			{{ xo:img name="BeOS_folder" }} {{ xo:pathinfo option="filename" }}
+		</a>
+	</p>
+	{{ /if_ne }}
+{{ /folders }}
+
+{{> footer}}
