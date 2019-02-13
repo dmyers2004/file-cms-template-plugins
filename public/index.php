@@ -9,4 +9,4 @@ ini_set('display_errors', 1);
 
 require 'vendor/autoload.php';
 
-(new \xo\App('config.ini',$_SERVER))->route()->output(true);
+(new \xo\App('config.ini'))->route()->output(true);

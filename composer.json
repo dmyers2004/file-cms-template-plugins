@@ -1,7 +1,6 @@
 {
 	"autoload": {
-		"psr-4": {"xo\\": "./xo/src"},
-		"files": ["xo/src/Common.php"]
+		"psr-4": {"xo\\": "./xo/src"}
 	},
 	"minimum-stability": "dev",
 		"require": {
