@@ -18,6 +18,7 @@ $options =>
 	
 	{{xo.set name="age" value=title}}
 */
-return function($options) use (&$in) {
+
+$plugin['xo:set'] = function($options) use (&$in) {
 	$in[$options['hash']['name']] = $options['hash']['value'];
 };

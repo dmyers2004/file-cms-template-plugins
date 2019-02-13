@@ -18,6 +18,7 @@ $options =>
 	
 	{{xo.get name="age"}}
 */
-return function($options) {
+
+$plugin['xo:get'] = function($options) {
 	return $options['_this'][$options['hash']['name']];
 };

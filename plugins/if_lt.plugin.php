@@ -21,7 +21,8 @@ $options =>
 	{{/if_lt}}
 
 */
-return function($value1,$value2,$options) {
+
+$plugin['if_lt'] = function($value1,$value2,$options) {
 	if ($value1 < $value2) {
 		$return = $options['fn']();
 	} elseif ($options['inverse'] instanceof \Closure) {

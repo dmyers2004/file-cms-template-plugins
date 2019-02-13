@@ -18,7 +18,6 @@ $options =>
 	
 	{{xo.block name="age"}}
 */
-
-$plugin['xo:block'] = function($options) {
+return function($options) {
 	return $options['fn']($options['_this']); /* parse inter block content */
 };

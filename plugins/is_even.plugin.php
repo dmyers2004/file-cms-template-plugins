@@ -25,7 +25,8 @@ $options =>
 	{{/is_even}}
 
 */
-return function($value,$options) {
+
+$plugin['is_even'] = function($value,$options) {
 	/* parse the "then" (fn) or the "else" (inverse) */
 	$return = '';
 

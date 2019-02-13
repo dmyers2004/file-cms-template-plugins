@@ -23,7 +23,7 @@ namespace xo;
  *
  */
 
-class FileHandler {
+class FileHandler implements FileHandlerInterface {
 	/**
 	 * errors configuration array
 	 *
@@ -52,27 +52,6 @@ class FileHandler {
 		$this->app = $app;
 	}
 
-	/**
-	 *
-	 * Description Here
-	 *
-	 * @access public
-	 *
-	 * @param string $template_name
-	 *
-	 * @throws
-	 * @return bool
-	 *
-	 * #### Example
-	 * ```
-	 *
-	 * ```
-	 */
-	public function template_exists(string $template_name) : bool
-	{
-		return file_exists(ROOTPATH.$this->app->config('web path','/site/pages').'/'.trim($template_name,'/').'.'.ltrim($this->app->config('template extension','html'),'.'));
-	}
-
 	/* auto detect by extension */
 	/**
 	 *
@@ -92,6 +71,8 @@ class FileHandler {
 	 */
 	public function get(string $filename)
 	{
+		$this->app->log('Get "'.$filename.'".');
+
 		$ext = pathinfo($filename,PATHINFO_EXTENSION);
 
 		$data = [];
@@ -135,6 +116,8 @@ class FileHandler {
 	 */
 	public function get_array(string $filename) : array
 	{
+		$this->app->log('Get Array "'.$filename.'".');
+
 		if (substr($filename,-6) == '.array') {
 			$filename = substr($filename,0,-6);
 		}
@@ -168,6 +151,8 @@ class FileHandler {
 	 */
 	public function get_json(string $filename) : array
 	{
+		$this->app->log('Get JSON "'.$filename.'".');
+
 		if (substr($filename,-5) == '.json') {
 			$filename = substr($filename,0,-5);
 		}
@@ -201,6 +186,8 @@ class FileHandler {
 	 */
 	public function get_md(string $filename) : string
 	{
+		$this->app->log('Get Markdown "'.$filename.'".');
+
 		if (substr($filename,-3) == '.md') {
 			$filename = substr($filename,0,-3);
 		}
@@ -234,6 +221,8 @@ class FileHandler {
 	 */
 	public function get_yaml(string $filename) : array
 	{
+		$this->app->log('Get YAML "'.$filename.'".');
+
 		if (substr($filename,-5) == '.yaml') {
 			$filename = substr($filename,0,-5);
 		}
@@ -267,6 +256,8 @@ class FileHandler {
 	 */
 	public function get_ini(string $filename) : array
 	{
+		$this->app->log('Get ini "'.$filename.'".');
+
 		if (substr($filename,-4) == '.ini') {
 			$filename = substr($filename,0,-4);
 		}
@@ -277,44 +268,6 @@ class FileHandler {
 
 		if (file_exists($filename)) {
 			$ini = parse_ini_file($filename,true,INI_SCANNER_NORMAL);
-		}
-
-		return $ini;
-	}
-
-	/**
-	 *
-	 * Description Here
-	 *
-	 * @access public
-	 *
-	 * @param string $filename
-	 *
-	 * @throws
-	 * @return array
-	 *
-	 * #### Example
-	 * ```
-	 *
-	 * ```
-	 */
-	public function load_remap_ini(string $filename) : array
-	{
-		$ini = [];
-
-		if (file_exists($filename)) {
-			$lines = file($filename);
-
-			foreach ($lines as $line) {
-				$line = trim($line);
-
-				if ($line[0] != '#' && $line[0] != ';') {
-					$x = str_getcsv($line,'=');
-
-					$ini[trim($x[0])] = trim($x[1]);
-				}
-			}
-
 		}
 
 		return $ini;
@@ -338,6 +291,10 @@ class FileHandler {
 	 */
 	public function create_path(string $path) : string
 	{
-		return str_replace('//','/',$path);
+		$clean_path = str_replace('//','/',$path);
+		
+		$this->app->log('Cleaned "'.$clean_path.'".');
+		
+		return $clean_path;
 	}
 } /* end class */

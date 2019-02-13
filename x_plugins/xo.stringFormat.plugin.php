@@ -21,8 +21,7 @@ $options =>
 	{{xo.error status=404 msg="Oh Darn!"}}
 
 */
-
-$plugin['xo:stringFormat'] = function() {	
+return function() {	
   /* first is string */
   $args = func_get_args();
     

@@ -21,8 +21,7 @@ $options =>
 	{{/iif}}
 
 */
-
-$plugin['iif'] = function($value1,$op,$value2,$options) {
+return function($value1,$op,$value2,$options) {
 	$return = '';
 
 	switch ($op) {

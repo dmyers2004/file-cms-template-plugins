@@ -14,20 +14,19 @@ $options =>
 	['fn']($options['_this']) # if ??? - don't forget to send in the context
 	['inverse']($options['_this']) # else ???- don't forget to send in the context
 
-	in is a reference to the data array sent in
-	
-	{{xo.error}}
-	{{xo.error status=405}}
-	{{xo.error status=404 msg="Oh Darn!"}}
+	{{#if_lt page_title "Current Projects"}}
+		True Do This
+	{{else}}
+		False Do This
+	{{/if_lt}}
 
 */
+return function($value1,$value2,$options) {
+	if ($value1 < $value2) {
+		$return = $options['fn']();
+	} elseif ($options['inverse'] instanceof \Closure) {
+		$return = $options['inverse']();
+	}
 
-$plugin['xo:stringFormat'] = function() {	
-  /* first is string */
-  $args = func_get_args();
-    
-  /* last is options - pop that off */
-  $options = array_pop($args);
-  
-  return call_user_func_array('sprintf',$args);
+	return $return;
 };

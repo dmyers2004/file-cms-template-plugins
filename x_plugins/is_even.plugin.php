@@ -14,20 +14,26 @@ $options =>
 	['fn']($options['_this']) # if ??? - don't forget to send in the context
 	['inverse']($options['_this']) # else ???- don't forget to send in the context
 
-	in is a reference to the data array sent in
+	{{#is_even variable}}
+		is even!
+	{{/is_even}}
 	
-	{{xo.error}}
-	{{xo.error status=405}}
-	{{xo.error status=404 msg="Oh Darn!"}}
+	{{#is_even variable}}
+		is even!
+	{{else}}
+		is not even!
+	{{/is_even}}
 
 */
+return function($value,$options) {
+	/* parse the "then" (fn) or the "else" (inverse) */
+	$return = '';
 
-$plugin['xo:stringFormat'] = function() {	
-  /* first is string */
-  $args = func_get_args();
-    
-  /* last is options - pop that off */
-  $options = array_pop($args);
-  
-  return call_user_func_array('sprintf',$args);
+	if (!($value % 2)) {
+		$return = $options['fn']($options['_this']);
+	} elseif ($options['inverse'] instanceof \Closure) {
+		$return = $options['inverse']($options['_this']);
+	}
+
+	return $return;
 };

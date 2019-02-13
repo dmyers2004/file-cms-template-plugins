@@ -25,7 +25,8 @@ $options =>
 	{{/is_odd}}
 
 */
-return function($value,$options) {
+
+$plugin['is_odd'] = function($value,$options) {
 	/* parse the "then" (fn) or the "else" (inverse) */
 	$return = '';
 

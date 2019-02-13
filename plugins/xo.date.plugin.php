@@ -17,7 +17,8 @@ $options =>
 	<div class="date">Posted on {{xo.date entry_date format="Y-m-d H:i:s"}}</div>
 
 */
-return function($arg1,$options) {
+
+$plugin['xo:date'] = function($arg1,$options) {
 	$timestamp = strtotime($arg1);
 
 	return date($options['hash']['format'],$timestamp);
