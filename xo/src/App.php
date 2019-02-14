@@ -104,12 +104,6 @@ class App
 		/* Application Config */
 		$this->config = $ini;
 
-		define('CACHEPATH', ROOTPATH.'/'.trim($this->config('cache path', '/cache'), '/'));
-
-		if (!file_exists(CACHEPATH)) {
-			mkdir(CACHEPATH, 0777, true);
-		}
-
 		define('DEBUG', ($this->config('debug', '0') == '1'));
 
 		if (DEBUG) {
@@ -118,6 +112,12 @@ class App
 		} else {
 			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
 			ini_set('display_errors', 0);
+		}
+
+		define('CACHEPATH', ROOTPATH.'/'.trim($this->config('cache path', '/cache'), '/'));
+
+		if (!file_exists(CACHEPATH)) {
+			mkdir(CACHEPATH, 0777, true);
 		}
 		
 		/* use what they sent in or the default */
@@ -231,11 +231,11 @@ class App
 	 */
 	public function output(bool $echo = false) : string
 	{
-		$filehandler_service = $this->config('services.filehandler', '\xo\filehandler');
+		$filehandler_service = $this->config('services.filehandler', '\xo\FileHandler');
 
 		$this->file = new $filehandler_service($this);
 
-		$handlebars_service = ($services['services.handlebars']) ?? '\xo\handlebars';
+		$handlebars_service = ($services['services.handlebars']) ?? '\xo\Handlebars';
 
 		$this->handlebars = new $handlebars_service($this);
 
