@@ -25,7 +25,7 @@ namespace xo;
 
 use LightnCandy\LightnCandy;
 
-class Handlebars implements HandlebarsInterface {
+class Handlebars {
 	/**
 	 * Track whether we are in debug mode or not
 	 *
@@ -713,19 +713,35 @@ class Handlebars implements HandlebarsInterface {
 			'flags'=>$this->flags,
 			'helpers'=>$this->plugins,
 			'renderex'=>'/* compiled '.str_replace(ROOTPATH,'',$type).' @ '.date('Y-m-d h:i:s e').' */', /* added to compiled PHP */
-			'partialresolver'=>function($context,$partial_name) { /* include / partial handler */
-				$key = trim(strtolower($partial_name),'/');
-
-				if (!isset($this->partial_files[$key])) {
-					throw new \Exception('Partial "'.$key.'" not found ');
-				}
-
-				return file_get_contents($this->partial_files[$key]);
-			},
+			'partialresolver'=>[$this,'partial_loader'],
 		];
 
 		/* compile it into a php magic! */
 		return LightnCandy::compile($template_string,$options);
+	}
+
+	/**
+	 *
+	 * Handlebars Partial Loader
+	 *
+	 * @access public
+	 *
+	 * @param $context
+	 * @param string $partial_name
+	 *
+	 * @throws \Exception
+	 * @return string
+	 *
+	 */
+	public function partial_loader(array $context,string $partial_name) : string
+	{
+		$key = trim(strtolower($partial_name),'/');
+
+		if (!isset($this->partial_files[$key])) {
+			throw new \Exception('Partial "'.$key.'" not found ');
+		}
+
+		return file_get_contents($this->partial_files[$key]);
 	}
 
 	/**

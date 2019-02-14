@@ -14,19 +14,18 @@ $options =>
 	['fn']($options['_this']) # if ??? - don't forget to send in the context
 	['inverse']($options['_this']) # else ???- don't forget to send in the context
 
-	{{#if_gt page_title "Current Projects"}}
-		True Do This
-	{{else}}
-		False Do This
-	{{/if_gt}}
+	{{xo:import "filename.ini"}}
+	{{xo:import "examples/import.ini" "namespace"}}
 
 */
-return function($value1,$value2,$options) {
-	if ($value1 > $value2) {
-		$return = $options['fn']();
-	} elseif ($options['inverse'] instanceof \Closure) {
-		$return = $options['inverse']();
-	}
+$plugin['xo:import'] = function($arg1,$arg2,$options) use (&$in) {
+	$data = app()->file->ini($arg1);
 
-	return $return;
+	foreach ($data as $name=>$value) {
+		if ($arg2) {
+			$in[$arg2][$name] = $value;
+		} else {
+			$in[$name] = $value;
+		}
+	}
 };

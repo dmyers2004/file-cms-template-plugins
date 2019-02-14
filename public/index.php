@@ -1,12 +1,13 @@
 <?php
 
+/* Based off this file where is the root of our web application? */
 define('ROOTPATH',realpath(__DIR__.'/../'));
 
+/* Changes PHP's current directory */
 chdir(ROOTPATH);
 
-error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
-ini_set('display_errors', 1);
-
+/* Load composer auto loader */
 require 'vendor/autoload.php';
 
-app(new \xo\App('config.ini'))->route()->output(true);
+/* create Application, route and send output */
+(new \xo\App('config.ini'))->route()->output(true);

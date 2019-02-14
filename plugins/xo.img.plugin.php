@@ -14,21 +14,11 @@ $options =>
 	['fn']($options['_this']) # if ??? - don't forget to send in the context
 	['inverse']($options['_this']) # else ???- don't forget to send in the context
 
-	{{#if_eq page_title "Current Projects"}}
-		True Do This
-	{{else}}
-		False Do This
-	{{/if_eq}}
-
-*/
-return function($value1,$value2,$options) {
-	if ($value1 == $value2) {
-		$return = $options['fn']();
-	} elseif ($options['inverse'] instanceof \Closure) {
-		$return = $options['inverse']();
-	}
+	in is a reference to the data array sent in
 	
-	return $return;
+	{{xo.set name="age" value=title}}
+*/
+
+$plugin['xo:img'] = function($options) use (&$in) {
+	return new \LightnCandy\SafeString('<img src="/assets/'.$options['hash']['name'].'.png" width="48" height="48">');
 };
-
-

@@ -248,3 +248,773 @@ Wed, 13 Feb 2019 17:15:00 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/p
 Wed, 13 Feb 2019 17:15:00 -0500	Found.
 Wed, 13 Feb 2019 17:15:00 -0500	Output.
 Wed, 13 Feb 2019 17:15:00 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 17:20:42 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:20:42 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:20:42 -0500	Found.
+Wed, 13 Feb 2019 17:21:06 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:21:06 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:21:06 -0500	Found.
+Wed, 13 Feb 2019 17:21:15 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:21:15 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:21:15 -0500	Found.
+Wed, 13 Feb 2019 17:21:17 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:21:17 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:21:17 -0500	Found.
+Wed, 13 Feb 2019 17:21:17 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:21:17 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:21:17 -0500	Found.
+Wed, 13 Feb 2019 17:21:17 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:21:17 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:21:17 -0500	Found.
+Wed, 13 Feb 2019 17:21:31 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:21:31 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:21:31 -0500	Found.
+Wed, 13 Feb 2019 17:21:31 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:21:31 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:21:31 -0500	Found.
+Wed, 13 Feb 2019 17:21:31 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:21:31 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:21:31 -0500	Found.
+Wed, 13 Feb 2019 17:21:32 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:21:32 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:21:32 -0500	Found.
+Wed, 13 Feb 2019 17:22:09 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:22:09 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:22:09 -0500	Found.
+Wed, 13 Feb 2019 17:22:09 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:22:09 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:22:09 -0500	Found.
+Wed, 13 Feb 2019 17:22:18 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:22:18 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:22:18 -0500	Found.
+Wed, 13 Feb 2019 17:22:21 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:22:21 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:22:21 -0500	Found.
+Wed, 13 Feb 2019 17:24:06 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:24:06 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:24:06 -0500	Found.
+Wed, 13 Feb 2019 17:24:06 -0500	Output.
+Wed, 13 Feb 2019 17:24:06 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 17:24:48 -0500	Looking for "index".
+Wed, 13 Feb 2019 17:24:48 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 17:24:48 -0500	Found.
+Wed, 13 Feb 2019 17:24:48 -0500	Output.
+Wed, 13 Feb 2019 17:24:48 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 17:24:53 -0500	Looking for "CodeIgniter User Guide".
+Wed, 13 Feb 2019 17:24:53 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/CodeIgniter User Guide.html" exist.
+Wed, 13 Feb 2019 17:24:53 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 17:24:53 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 17:24:53 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /CodeIgniter User Guide.
+Wed, 13 Feb 2019 17:24:53 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /CodeIgniter User Guide.
+Wed, 13 Feb 2019 17:24:53 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 17:24:53 -0500	No.
+Wed, 13 Feb 2019 17:24:53 -0500	Error.
+Wed, 13 Feb 2019 17:24:53 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 17:24:53 -0500	Template "error".
+Wed, 13 Feb 2019 17:24:53 -0500	Status "404".
+Wed, 13 Feb 2019 17:24:53 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 17:24:53 -0500	Output.
+Wed, 13 Feb 2019 17:24:53 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/.html".
+Wed, 13 Feb 2019 17:25:12 -0500	Looking for "CodeIgniter User Guide".
+Wed, 13 Feb 2019 17:25:12 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/CodeIgniter User Guide.html" exist.
+Wed, 13 Feb 2019 17:25:12 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 17:25:12 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 17:25:12 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /CodeIgniter User Guide.
+Wed, 13 Feb 2019 17:25:12 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /CodeIgniter User Guide.
+Wed, 13 Feb 2019 17:25:12 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 17:25:12 -0500	No.
+Wed, 13 Feb 2019 17:25:12 -0500	Error.
+Wed, 13 Feb 2019 17:25:12 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 17:25:12 -0500	Template "error".
+Wed, 13 Feb 2019 17:25:12 -0500	Status "404".
+Wed, 13 Feb 2019 17:25:12 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 17:25:12 -0500	Output.
+Wed, 13 Feb 2019 17:25:12 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/.html".
+Wed, 13 Feb 2019 17:25:25 -0500	Looking for "Lines of Code".
+Wed, 13 Feb 2019 17:25:25 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/Lines of Code.html" exist.
+Wed, 13 Feb 2019 17:25:25 -0500	Found.
+Wed, 13 Feb 2019 17:25:25 -0500	Output.
+Wed, 13 Feb 2019 17:25:25 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/Lines of Code.html".
+Wed, 13 Feb 2019 17:25:29 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:25:29 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:25:29 -0500	Found.
+Wed, 13 Feb 2019 17:25:29 -0500	Output.
+Wed, 13 Feb 2019 17:25:29 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 17:25:58 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:25:58 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:25:58 -0500	Found.
+Wed, 13 Feb 2019 17:25:58 -0500	Output.
+Wed, 13 Feb 2019 17:25:58 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 17:35:24 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:35:24 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:35:24 -0500	Found.
+Wed, 13 Feb 2019 17:35:24 -0500	Output.
+Wed, 13 Feb 2019 17:35:24 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 17:37:15 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:37:15 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:37:15 -0500	Found.
+Wed, 13 Feb 2019 17:37:23 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:37:23 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:37:23 -0500	Found.
+Wed, 13 Feb 2019 17:37:23 -0500	Output.
+Wed, 13 Feb 2019 17:37:23 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 17:37:24 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:37:24 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:37:24 -0500	Found.
+Wed, 13 Feb 2019 17:37:24 -0500	Output.
+Wed, 13 Feb 2019 17:37:24 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 17:37:26 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:37:26 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:37:26 -0500	Found.
+Wed, 13 Feb 2019 17:37:26 -0500	Output.
+Wed, 13 Feb 2019 17:37:26 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 17:37:51 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:37:51 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:37:51 -0500	Found.
+Wed, 13 Feb 2019 17:37:51 -0500	Output.
+Wed, 13 Feb 2019 17:37:51 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 17:38:56 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:38:56 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:38:56 -0500	Found.
+Wed, 13 Feb 2019 17:38:56 -0500	Output.
+Wed, 13 Feb 2019 17:38:56 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 17:38:57 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:38:57 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:38:57 -0500	Found.
+Wed, 13 Feb 2019 17:38:57 -0500	Output.
+Wed, 13 Feb 2019 17:38:57 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 17:39:30 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:39:30 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:39:30 -0500	Found.
+Wed, 13 Feb 2019 17:39:30 -0500	Output.
+Wed, 13 Feb 2019 17:39:30 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 17:43:40 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:43:40 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:43:40 -0500	Found.
+Wed, 13 Feb 2019 17:43:40 -0500	Output.
+Wed, 13 Feb 2019 17:43:40 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 17:43:40 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:43:40 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:43:40 -0500	Found.
+Wed, 13 Feb 2019 17:43:40 -0500	Output.
+Wed, 13 Feb 2019 17:43:40 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 17:43:43 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:43:43 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:43:43 -0500	Found.
+Wed, 13 Feb 2019 17:43:43 -0500	Output.
+Wed, 13 Feb 2019 17:43:43 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 17:44:53 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:44:53 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:44:53 -0500	Found.
+Wed, 13 Feb 2019 17:44:53 -0500	Output.
+Wed, 13 Feb 2019 17:44:53 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 17:44:54 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:44:54 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:44:54 -0500	Found.
+Wed, 13 Feb 2019 17:44:54 -0500	Output.
+Wed, 13 Feb 2019 17:44:54 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 17:47:06 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 17:47:06 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 17:47:06 -0500	Found.
+Wed, 13 Feb 2019 17:47:06 -0500	Output.
+Wed, 13 Feb 2019 17:47:06 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 18:08:03 -0500	Looking for "PHPDocs".
+Wed, 13 Feb 2019 18:08:03 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html" exist.
+Wed, 13 Feb 2019 18:08:03 -0500	Found.
+Wed, 13 Feb 2019 18:08:03 -0500	Output.
+Wed, 13 Feb 2019 18:08:03 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs.html".
+Wed, 13 Feb 2019 18:08:04 -0500	Looking for "PHPDocs/Codeigniter/index.html".
+Wed, 13 Feb 2019 18:08:04 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/PHPDocs/Codeigniter/index.html.html" exist.
+Wed, 13 Feb 2019 18:08:04 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 18:08:04 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 18:08:04 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /PHPDocs/Codeigniter/index.html.
+Wed, 13 Feb 2019 18:08:04 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /PHPDocs/Codeigniter/index.html.
+Wed, 13 Feb 2019 18:08:04 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 18:08:04 -0500	No.
+Wed, 13 Feb 2019 18:08:04 -0500	Error.
+Wed, 13 Feb 2019 18:08:04 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 18:08:04 -0500	Template "error".
+Wed, 13 Feb 2019 18:08:04 -0500	Status "404".
+Wed, 13 Feb 2019 18:08:04 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 18:08:04 -0500	Output.
+Wed, 13 Feb 2019 18:08:04 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/.html".
+Wed, 13 Feb 2019 18:08:36 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:08:36 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:08:36 -0500	Found.
+Wed, 13 Feb 2019 18:08:36 -0500	Output.
+Wed, 13 Feb 2019 18:08:36 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:08:40 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:08:40 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:08:40 -0500	Found.
+Wed, 13 Feb 2019 18:08:40 -0500	Output.
+Wed, 13 Feb 2019 18:08:40 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:08:42 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:08:42 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:08:42 -0500	Found.
+Wed, 13 Feb 2019 18:08:42 -0500	Output.
+Wed, 13 Feb 2019 18:08:42 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:09:54 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:09:54 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:09:54 -0500	Found.
+Wed, 13 Feb 2019 18:09:54 -0500	Output.
+Wed, 13 Feb 2019 18:09:54 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:09:55 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:09:55 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:09:55 -0500	Found.
+Wed, 13 Feb 2019 18:09:55 -0500	Output.
+Wed, 13 Feb 2019 18:09:55 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:10:03 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:10:03 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:10:03 -0500	Found.
+Wed, 13 Feb 2019 18:10:03 -0500	Output.
+Wed, 13 Feb 2019 18:10:03 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:10:45 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:10:45 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:10:45 -0500	Found.
+Wed, 13 Feb 2019 18:10:45 -0500	Output.
+Wed, 13 Feb 2019 18:10:45 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:10:52 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:10:52 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:10:52 -0500	Found.
+Wed, 13 Feb 2019 18:10:52 -0500	Output.
+Wed, 13 Feb 2019 18:10:52 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:11:37 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:11:37 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:11:37 -0500	Found.
+Wed, 13 Feb 2019 18:11:37 -0500	Output.
+Wed, 13 Feb 2019 18:11:37 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:11:45 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:11:45 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:11:45 -0500	Found.
+Wed, 13 Feb 2019 18:11:45 -0500	Output.
+Wed, 13 Feb 2019 18:11:45 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:22:05 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:22:05 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:22:05 -0500	Found.
+Wed, 13 Feb 2019 18:22:05 -0500	Output.
+Wed, 13 Feb 2019 18:22:05 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:22:06 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:22:06 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:22:06 -0500	Found.
+Wed, 13 Feb 2019 18:22:06 -0500	Output.
+Wed, 13 Feb 2019 18:22:06 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:22:06 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:22:06 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:22:06 -0500	Found.
+Wed, 13 Feb 2019 18:22:06 -0500	Output.
+Wed, 13 Feb 2019 18:22:06 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:22:53 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:22:53 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:22:53 -0500	Found.
+Wed, 13 Feb 2019 18:22:53 -0500	Output.
+Wed, 13 Feb 2019 18:22:53 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:22:54 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:22:54 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:22:54 -0500	Found.
+Wed, 13 Feb 2019 18:22:54 -0500	Output.
+Wed, 13 Feb 2019 18:22:54 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:22:56 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:22:56 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:22:56 -0500	Found.
+Wed, 13 Feb 2019 18:22:56 -0500	Output.
+Wed, 13 Feb 2019 18:22:56 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:22:57 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:22:57 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:22:57 -0500	Found.
+Wed, 13 Feb 2019 18:22:57 -0500	Output.
+Wed, 13 Feb 2019 18:22:57 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:22:57 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:22:57 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:22:57 -0500	Found.
+Wed, 13 Feb 2019 18:22:57 -0500	Output.
+Wed, 13 Feb 2019 18:22:57 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:22:57 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:22:57 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:22:57 -0500	Found.
+Wed, 13 Feb 2019 18:22:57 -0500	Output.
+Wed, 13 Feb 2019 18:22:57 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:23:00 -0500	Looking for "Lines of Code".
+Wed, 13 Feb 2019 18:23:00 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/Lines of Code.html" exist.
+Wed, 13 Feb 2019 18:23:00 -0500	Found.
+Wed, 13 Feb 2019 18:23:00 -0500	Output.
+Wed, 13 Feb 2019 18:23:00 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/Lines of Code.html".
+Wed, 13 Feb 2019 18:23:49 -0500	Looking for "words".
+Wed, 13 Feb 2019 18:23:49 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/words.html" exist.
+Wed, 13 Feb 2019 18:23:49 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 18:23:49 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 18:23:49 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:23:49 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:23:49 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 18:23:49 -0500	No.
+Wed, 13 Feb 2019 18:23:49 -0500	Error.
+Wed, 13 Feb 2019 18:23:49 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 18:23:49 -0500	Template "error".
+Wed, 13 Feb 2019 18:23:49 -0500	Status "404".
+Wed, 13 Feb 2019 18:23:49 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 18:23:49 -0500	Output.
+Wed, 13 Feb 2019 18:23:49 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/.html".
+Wed, 13 Feb 2019 18:27:26 -0500	Looking for "words".
+Wed, 13 Feb 2019 18:27:26 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/words.html" exist.
+Wed, 13 Feb 2019 18:27:26 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 18:27:26 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 18:27:26 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:27:26 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:27:26 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 18:27:26 -0500	No.
+Wed, 13 Feb 2019 18:27:26 -0500	Error.
+Wed, 13 Feb 2019 18:27:26 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 18:27:26 -0500	Template "error".
+Wed, 13 Feb 2019 18:27:26 -0500	Status "404".
+Wed, 13 Feb 2019 18:27:26 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 18:27:26 -0500	Output.
+Wed, 13 Feb 2019 18:27:26 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/.html".
+Wed, 13 Feb 2019 18:27:28 -0500	Looking for "words".
+Wed, 13 Feb 2019 18:27:28 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/words.html" exist.
+Wed, 13 Feb 2019 18:27:28 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 18:27:28 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 18:27:28 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:27:28 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:27:28 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 18:27:28 -0500	No.
+Wed, 13 Feb 2019 18:27:28 -0500	Error.
+Wed, 13 Feb 2019 18:27:28 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 18:27:28 -0500	Template "error".
+Wed, 13 Feb 2019 18:27:28 -0500	Status "404".
+Wed, 13 Feb 2019 18:27:28 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 18:27:28 -0500	Output.
+Wed, 13 Feb 2019 18:27:28 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/.html".
+Wed, 13 Feb 2019 18:28:16 -0500	Looking for "words".
+Wed, 13 Feb 2019 18:28:16 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/words.html" exist.
+Wed, 13 Feb 2019 18:28:16 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 18:28:16 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 18:28:16 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:28:16 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:28:16 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 18:28:16 -0500	No.
+Wed, 13 Feb 2019 18:28:16 -0500	Error.
+Wed, 13 Feb 2019 18:28:16 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 18:28:16 -0500	Template "error".
+Wed, 13 Feb 2019 18:28:16 -0500	Status "404".
+Wed, 13 Feb 2019 18:28:16 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 18:28:16 -0500	Output.
+Wed, 13 Feb 2019 18:28:16 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/.html".
+Wed, 13 Feb 2019 18:28:17 -0500	Looking for "words".
+Wed, 13 Feb 2019 18:28:17 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/words.html" exist.
+Wed, 13 Feb 2019 18:28:17 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 18:28:17 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 18:28:17 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:28:17 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:28:17 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 18:28:17 -0500	No.
+Wed, 13 Feb 2019 18:28:17 -0500	Error.
+Wed, 13 Feb 2019 18:28:17 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 18:28:17 -0500	Template "error".
+Wed, 13 Feb 2019 18:28:17 -0500	Status "404".
+Wed, 13 Feb 2019 18:28:17 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 18:28:17 -0500	Output.
+Wed, 13 Feb 2019 18:28:17 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/.html".
+Wed, 13 Feb 2019 18:29:45 -0500	Looking for "words".
+Wed, 13 Feb 2019 18:29:45 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/words.html" exist.
+Wed, 13 Feb 2019 18:29:45 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 18:29:45 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 18:29:45 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:29:45 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:29:45 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 18:29:45 -0500	No.
+Wed, 13 Feb 2019 18:29:45 -0500	Error.
+Wed, 13 Feb 2019 18:29:45 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 18:29:45 -0500	Template "error".
+Wed, 13 Feb 2019 18:29:45 -0500	Status "404".
+Wed, 13 Feb 2019 18:29:45 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 18:29:45 -0500	Output.
+Wed, 13 Feb 2019 18:29:45 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html".
+Wed, 13 Feb 2019 18:29:58 -0500	Looking for "words".
+Wed, 13 Feb 2019 18:29:58 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/words.html" exist.
+Wed, 13 Feb 2019 18:29:58 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 18:29:58 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 18:29:58 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:29:58 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:29:58 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 18:29:58 -0500	No.
+Wed, 13 Feb 2019 18:29:58 -0500	Error.
+Wed, 13 Feb 2019 18:29:58 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 18:29:58 -0500	Template "error".
+Wed, 13 Feb 2019 18:29:58 -0500	Status "404".
+Wed, 13 Feb 2019 18:29:58 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 18:29:58 -0500	Output.
+Wed, 13 Feb 2019 18:29:58 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html".
+Wed, 13 Feb 2019 18:30:00 -0500	Looking for "words".
+Wed, 13 Feb 2019 18:30:00 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/words.html" exist.
+Wed, 13 Feb 2019 18:30:00 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 18:30:00 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 18:30:00 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:30:00 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:30:00 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 18:30:00 -0500	No.
+Wed, 13 Feb 2019 18:30:00 -0500	Error.
+Wed, 13 Feb 2019 18:30:00 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 18:30:00 -0500	Template "error".
+Wed, 13 Feb 2019 18:30:00 -0500	Status "404".
+Wed, 13 Feb 2019 18:30:00 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 18:30:00 -0500	Output.
+Wed, 13 Feb 2019 18:30:00 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html".
+Wed, 13 Feb 2019 18:31:17 -0500	Looking for "words".
+Wed, 13 Feb 2019 18:31:17 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/words.html" exist.
+Wed, 13 Feb 2019 18:31:17 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 18:31:17 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 18:31:17 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:31:17 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:31:17 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 18:31:17 -0500	No.
+Wed, 13 Feb 2019 18:31:17 -0500	Error.
+Wed, 13 Feb 2019 18:31:17 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 18:31:17 -0500	Template "error"
+Status "404"
+Message "Page Not Found".
+Wed, 13 Feb 2019 18:31:17 -0500	Output.
+Wed, 13 Feb 2019 18:31:17 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html".
+Wed, 13 Feb 2019 18:32:23 -0500	Looking for "words".
+Wed, 13 Feb 2019 18:32:23 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/words.html" exist.
+Wed, 13 Feb 2019 18:32:23 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 18:32:23 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 18:32:23 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:32:23 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:32:23 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 18:32:23 -0500	No.
+Wed, 13 Feb 2019 18:32:23 -0500	Error.
+Wed, 13 Feb 2019 18:32:23 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 18:32:23 -0500	Template "error"
+Wed, 13 Feb 2019 18:32:23 -0500	Status "404"
+Wed, 13 Feb 2019 18:32:23 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 18:32:23 -0500	Output.
+Wed, 13 Feb 2019 18:32:23 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html".
+Wed, 13 Feb 2019 18:46:02 -0500	Looking for "words".
+Wed, 13 Feb 2019 18:46:02 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/words.html" exist.
+Wed, 13 Feb 2019 18:46:02 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 18:46:02 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 18:46:02 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:46:02 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:46:02 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 18:46:02 -0500	No.
+Wed, 13 Feb 2019 18:46:02 -0500	Error.
+Wed, 13 Feb 2019 18:46:02 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 18:46:02 -0500	Template "error"
+Wed, 13 Feb 2019 18:46:02 -0500	Status "404"
+Wed, 13 Feb 2019 18:46:02 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 18:46:02 -0500	Output.
+Wed, 13 Feb 2019 18:46:02 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html".
+Wed, 13 Feb 2019 18:46:03 -0500	Looking for "words".
+Wed, 13 Feb 2019 18:46:03 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/words.html" exist.
+Wed, 13 Feb 2019 18:46:03 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 18:46:03 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 18:46:03 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:46:03 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:46:03 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 18:46:03 -0500	No.
+Wed, 13 Feb 2019 18:46:03 -0500	Error.
+Wed, 13 Feb 2019 18:46:03 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 18:46:03 -0500	Template "error"
+Wed, 13 Feb 2019 18:46:03 -0500	Status "404"
+Wed, 13 Feb 2019 18:46:03 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 18:46:03 -0500	Output.
+Wed, 13 Feb 2019 18:46:03 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html".
+Wed, 13 Feb 2019 18:47:47 -0500	Looking for "words".
+Wed, 13 Feb 2019 18:47:47 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/words.html" exist.
+Wed, 13 Feb 2019 18:47:47 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 18:47:47 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 18:47:47 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:47:47 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /words.
+Wed, 13 Feb 2019 18:47:47 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 18:47:47 -0500	No.
+Wed, 13 Feb 2019 18:47:47 -0500	Error.
+Wed, 13 Feb 2019 18:47:47 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 18:47:47 -0500	Template "error"
+Wed, 13 Feb 2019 18:47:47 -0500	Status "404"
+Wed, 13 Feb 2019 18:47:47 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 18:47:47 -0500	Output.
+Wed, 13 Feb 2019 18:47:47 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html".
+Wed, 13 Feb 2019 18:48:32 -0500	Looking for "Lines of Code".
+Wed, 13 Feb 2019 18:48:32 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/Lines of Code.html" exist.
+Wed, 13 Feb 2019 18:48:32 -0500	Found.
+Wed, 13 Feb 2019 18:48:32 -0500	Output.
+Wed, 13 Feb 2019 18:48:32 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/Lines of Code.html".
+Wed, 13 Feb 2019 18:48:35 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:48:35 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:48:35 -0500	Found.
+Wed, 13 Feb 2019 18:48:35 -0500	Output.
+Wed, 13 Feb 2019 18:48:35 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:52:21 -0500	Looking for "index".
+Wed, 13 Feb 2019 18:52:21 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html" exist.
+Wed, 13 Feb 2019 18:52:21 -0500	Found.
+Wed, 13 Feb 2019 18:52:21 -0500	Output.
+Wed, 13 Feb 2019 18:52:21 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/index.html".
+Wed, 13 Feb 2019 18:55:48 -0500	Looking for "foobar".
+Wed, 13 Feb 2019 18:55:48 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html" exist.
+Wed, 13 Feb 2019 18:55:48 -0500	Found.
+Wed, 13 Feb 2019 18:55:48 -0500	Output.
+Wed, 13 Feb 2019 18:55:48 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html".
+Wed, 13 Feb 2019 18:56:19 -0500	Looking for "foobar".
+Wed, 13 Feb 2019 18:56:19 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html" exist.
+Wed, 13 Feb 2019 18:56:19 -0500	Found.
+Wed, 13 Feb 2019 18:56:19 -0500	Output.
+Wed, 13 Feb 2019 18:56:19 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html".
+Wed, 13 Feb 2019 18:57:36 -0500	Looking for "foobar".
+Wed, 13 Feb 2019 18:57:36 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html" exist.
+Wed, 13 Feb 2019 18:57:36 -0500	Found.
+Wed, 13 Feb 2019 18:57:36 -0500	Output.
+Wed, 13 Feb 2019 18:57:36 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html".
+Wed, 13 Feb 2019 18:57:36 -0500	Looking for "foobar".
+Wed, 13 Feb 2019 18:57:36 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html" exist.
+Wed, 13 Feb 2019 18:57:36 -0500	Found.
+Wed, 13 Feb 2019 18:57:36 -0500	Output.
+Wed, 13 Feb 2019 18:57:36 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html".
+Wed, 13 Feb 2019 18:57:37 -0500	Looking for "foobar".
+Wed, 13 Feb 2019 18:57:37 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html" exist.
+Wed, 13 Feb 2019 18:57:37 -0500	Found.
+Wed, 13 Feb 2019 18:57:37 -0500	Output.
+Wed, 13 Feb 2019 18:57:37 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html".
+Wed, 13 Feb 2019 18:57:38 -0500	Looking for "foobar".
+Wed, 13 Feb 2019 18:57:38 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html" exist.
+Wed, 13 Feb 2019 18:57:38 -0500	Found.
+Wed, 13 Feb 2019 18:57:38 -0500	Output.
+Wed, 13 Feb 2019 18:57:38 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html".
+Wed, 13 Feb 2019 18:57:38 -0500	Looking for "foobar".
+Wed, 13 Feb 2019 18:57:38 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html" exist.
+Wed, 13 Feb 2019 18:57:38 -0500	Found.
+Wed, 13 Feb 2019 18:57:38 -0500	Output.
+Wed, 13 Feb 2019 18:57:38 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html".
+Wed, 13 Feb 2019 18:59:29 -0500	Looking for "foobar".
+Wed, 13 Feb 2019 18:59:29 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html" exist.
+Wed, 13 Feb 2019 18:59:29 -0500	Found.
+Wed, 13 Feb 2019 18:59:29 -0500	Output.
+Wed, 13 Feb 2019 18:59:29 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html".
+Wed, 13 Feb 2019 18:59:29 -0500	Looking for "css/example.css".
+Wed, 13 Feb 2019 18:59:29 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/css/example.css.html" exist.
+Wed, 13 Feb 2019 18:59:29 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 18:59:29 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 18:59:29 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /css/example.css.
+Wed, 13 Feb 2019 18:59:29 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /css/example.css.
+Wed, 13 Feb 2019 18:59:29 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 18:59:29 -0500	No.
+Wed, 13 Feb 2019 18:59:29 -0500	Error.
+Wed, 13 Feb 2019 18:59:29 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 18:59:29 -0500	Template "error"
+Wed, 13 Feb 2019 18:59:29 -0500	Status "404"
+Wed, 13 Feb 2019 18:59:29 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 18:59:29 -0500	Output.
+Wed, 13 Feb 2019 18:59:29 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html".
+Wed, 13 Feb 2019 18:59:36 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 18:59:36 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 18:59:36 -0500	Found.
+Wed, 13 Feb 2019 18:59:36 -0500	Output.
+Wed, 13 Feb 2019 18:59:36 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:00:18 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:00:18 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:00:18 -0500	Found.
+Wed, 13 Feb 2019 19:00:18 -0500	Output.
+Wed, 13 Feb 2019 19:00:18 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:00:18 -0500	Clean "/site/data/blog1.md".
+Wed, 13 Feb 2019 19:00:18 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo//site/data/blog1.md".
+Wed, 13 Feb 2019 19:04:11 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:04:11 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:04:11 -0500	Found.
+Wed, 13 Feb 2019 19:04:11 -0500	Output.
+Wed, 13 Feb 2019 19:04:11 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:04:11 -0500	Clean "/site/data/blog1.md".
+Wed, 13 Feb 2019 19:04:11 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo//site/data/blog1.md".
+Wed, 13 Feb 2019 19:04:15 -0500	Looking for "foobar".
+Wed, 13 Feb 2019 19:04:15 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html" exist.
+Wed, 13 Feb 2019 19:04:15 -0500	Found.
+Wed, 13 Feb 2019 19:04:15 -0500	Output.
+Wed, 13 Feb 2019 19:04:15 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html".
+Wed, 13 Feb 2019 19:04:15 -0500	Looking for "css/example.css".
+Wed, 13 Feb 2019 19:04:15 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/css/example.css.html" exist.
+Wed, 13 Feb 2019 19:04:15 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 19:04:15 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 19:04:15 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /css/example.css.
+Wed, 13 Feb 2019 19:04:15 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /css/example.css.
+Wed, 13 Feb 2019 19:04:15 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 19:04:15 -0500	No.
+Wed, 13 Feb 2019 19:04:15 -0500	Error.
+Wed, 13 Feb 2019 19:04:15 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 19:04:15 -0500	Template "error"
+Wed, 13 Feb 2019 19:04:15 -0500	Status "404"
+Wed, 13 Feb 2019 19:04:15 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 19:04:15 -0500	Output.
+Wed, 13 Feb 2019 19:04:15 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html".
+Wed, 13 Feb 2019 19:05:18 -0500	Looking for "foobar".
+Wed, 13 Feb 2019 19:05:18 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html" exist.
+Wed, 13 Feb 2019 19:05:18 -0500	Found.
+Wed, 13 Feb 2019 19:05:18 -0500	Output.
+Wed, 13 Feb 2019 19:05:18 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html".
+Wed, 13 Feb 2019 19:05:18 -0500	Looking for "css/example.css".
+Wed, 13 Feb 2019 19:05:18 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/css/example.css.html" exist.
+Wed, 13 Feb 2019 19:05:18 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 19:05:18 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 19:05:18 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /css/example.css.
+Wed, 13 Feb 2019 19:05:18 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /css/example.css.
+Wed, 13 Feb 2019 19:05:18 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 19:05:18 -0500	No.
+Wed, 13 Feb 2019 19:05:18 -0500	Error.
+Wed, 13 Feb 2019 19:05:18 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 19:05:18 -0500	Template "error"
+Wed, 13 Feb 2019 19:05:18 -0500	Status "404"
+Wed, 13 Feb 2019 19:05:18 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 19:05:18 -0500	Output.
+Wed, 13 Feb 2019 19:05:18 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html".
+Wed, 13 Feb 2019 19:05:31 -0500	Looking for "foobar".
+Wed, 13 Feb 2019 19:05:31 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html" exist.
+Wed, 13 Feb 2019 19:05:31 -0500	Found.
+Wed, 13 Feb 2019 19:05:31 -0500	Output.
+Wed, 13 Feb 2019 19:05:31 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html".
+Wed, 13 Feb 2019 19:05:31 -0500	Looking for "css/example.css".
+Wed, 13 Feb 2019 19:05:31 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/css/example.css.html" exist.
+Wed, 13 Feb 2019 19:05:31 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 19:05:31 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 19:05:31 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /css/example.css.
+Wed, 13 Feb 2019 19:05:31 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /css/example.css.
+Wed, 13 Feb 2019 19:05:31 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 19:05:31 -0500	No.
+Wed, 13 Feb 2019 19:05:31 -0500	Error.
+Wed, 13 Feb 2019 19:05:31 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 19:05:31 -0500	Template "error"
+Wed, 13 Feb 2019 19:05:31 -0500	Status "404"
+Wed, 13 Feb 2019 19:05:31 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 19:05:31 -0500	Output.
+Wed, 13 Feb 2019 19:05:31 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html".
+Wed, 13 Feb 2019 19:05:37 -0500	Looking for "foobar".
+Wed, 13 Feb 2019 19:05:37 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html" exist.
+Wed, 13 Feb 2019 19:05:37 -0500	Found.
+Wed, 13 Feb 2019 19:05:37 -0500	Output.
+Wed, 13 Feb 2019 19:05:37 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/foobar.html".
+Wed, 13 Feb 2019 19:05:37 -0500	Looking for "css/example.css".
+Wed, 13 Feb 2019 19:05:37 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/css/example.css.html" exist.
+Wed, 13 Feb 2019 19:05:37 -0500	Not Found, Let's try to remap.
+Wed, 13 Feb 2019 19:05:37 -0500	Load Remap INI file "/Users/donmyers/Projects/php_doc_xo/remap.ini".
+Wed, 13 Feb 2019 19:05:37 -0500	Testing Map #^/lines of code/(?<folder>[^/]*)$#im against /css/example.css.
+Wed, 13 Feb 2019 19:05:37 -0500	Testing Map #^/phpdocs/x(?<folder>[^/]*)$#im against /css/example.css.
+Wed, 13 Feb 2019 19:05:37 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/.html" exist.
+Wed, 13 Feb 2019 19:05:37 -0500	No.
+Wed, 13 Feb 2019 19:05:37 -0500	Error.
+Wed, 13 Feb 2019 19:05:37 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html" exist.
+Wed, 13 Feb 2019 19:05:37 -0500	Template "error"
+Wed, 13 Feb 2019 19:05:37 -0500	Status "404"
+Wed, 13 Feb 2019 19:05:37 -0500	Message "Page Not Found".
+Wed, 13 Feb 2019 19:05:37 -0500	Output.
+Wed, 13 Feb 2019 19:05:37 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/error.html".
+Wed, 13 Feb 2019 19:06:40 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:06:40 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:06:40 -0500	Found.
+Wed, 13 Feb 2019 19:06:40 -0500	Output.
+Wed, 13 Feb 2019 19:06:40 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:06:40 -0500	Clean "/site/data/blog1.md".
+Wed, 13 Feb 2019 19:06:40 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo//site/data/blog1.md".
+Wed, 13 Feb 2019 19:07:55 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:07:55 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:07:55 -0500	Found.
+Wed, 13 Feb 2019 19:07:55 -0500	Output.
+Wed, 13 Feb 2019 19:07:55 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:07:55 -0500	Clean "/Users/donmyers/Projects/php_doc_xo//site/data/blog1.md".
+Wed, 13 Feb 2019 19:07:55 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:08:18 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:08:18 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:08:18 -0500	Found.
+Wed, 13 Feb 2019 19:08:18 -0500	Output.
+Wed, 13 Feb 2019 19:08:18 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:08:18 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:09:40 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:09:40 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:09:40 -0500	Found.
+Wed, 13 Feb 2019 19:09:40 -0500	Output.
+Wed, 13 Feb 2019 19:09:40 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:09:40 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:10:00 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:10:00 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:10:00 -0500	Found.
+Wed, 13 Feb 2019 19:10:00 -0500	Output.
+Wed, 13 Feb 2019 19:10:00 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:10:00 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:10:00 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:10:00 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:10:00 -0500	Found.
+Wed, 13 Feb 2019 19:10:00 -0500	Output.
+Wed, 13 Feb 2019 19:10:00 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:10:00 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:10:37 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:10:37 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:10:37 -0500	Found.
+Wed, 13 Feb 2019 19:10:37 -0500	Output.
+Wed, 13 Feb 2019 19:10:37 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:10:37 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:10:40 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:10:40 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:10:40 -0500	Found.
+Wed, 13 Feb 2019 19:10:40 -0500	Output.
+Wed, 13 Feb 2019 19:10:40 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:10:41 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:10:41 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:10:41 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:10:41 -0500	Found.
+Wed, 13 Feb 2019 19:10:41 -0500	Output.
+Wed, 13 Feb 2019 19:10:41 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:10:41 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:10:41 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:10:41 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:10:41 -0500	Found.
+Wed, 13 Feb 2019 19:10:41 -0500	Output.
+Wed, 13 Feb 2019 19:10:41 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:10:41 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:10:41 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:10:41 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:10:41 -0500	Found.
+Wed, 13 Feb 2019 19:10:41 -0500	Output.
+Wed, 13 Feb 2019 19:10:41 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:10:41 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:10:41 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:10:41 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:10:41 -0500	Found.
+Wed, 13 Feb 2019 19:10:41 -0500	Output.
+Wed, 13 Feb 2019 19:10:41 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:10:41 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:10:42 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:10:42 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:10:42 -0500	Found.
+Wed, 13 Feb 2019 19:10:42 -0500	Output.
+Wed, 13 Feb 2019 19:10:42 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:10:42 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:10:42 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:10:42 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:10:42 -0500	Found.
+Wed, 13 Feb 2019 19:10:42 -0500	Output.
+Wed, 13 Feb 2019 19:10:42 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:10:42 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:10:44 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:10:44 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:10:44 -0500	Found.
+Wed, 13 Feb 2019 19:10:44 -0500	Output.
+Wed, 13 Feb 2019 19:10:44 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:10:44 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:10:44 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:10:44 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:10:44 -0500	Found.
+Wed, 13 Feb 2019 19:10:44 -0500	Output.
+Wed, 13 Feb 2019 19:10:44 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:10:44 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:10:45 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:10:45 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:10:45 -0500	Found.
+Wed, 13 Feb 2019 19:10:45 -0500	Output.
+Wed, 13 Feb 2019 19:10:45 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:10:45 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:10:45 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:10:45 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:10:45 -0500	Found.
+Wed, 13 Feb 2019 19:10:45 -0500	Output.
+Wed, 13 Feb 2019 19:10:45 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:10:45 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".
+Wed, 13 Feb 2019 19:10:46 -0500	Looking for "markdown".
+Wed, 13 Feb 2019 19:10:46 -0500	Does "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html" exist.
+Wed, 13 Feb 2019 19:10:46 -0500	Found.
+Wed, 13 Feb 2019 19:10:46 -0500	Output.
+Wed, 13 Feb 2019 19:10:46 -0500	View "/Users/donmyers/Projects/php_doc_xo/site/pages/markdown.html".
+Wed, 13 Feb 2019 19:10:46 -0500	Get Markdown "/Users/donmyers/Projects/php_doc_xo/site/data/blog1.md".

@@ -3,7 +3,7 @@
  * XO
  *
  * File Based CMS
- * LightNCandy Handlebars Wrapper
+ * File Loading Functions
  *
  * This content is released under the MIT License (MIT)
  * Copyright (c) 2014 - 2019, Project Orange Box
@@ -23,7 +23,7 @@ namespace xo;
  *
  */
 
-class FileHandler implements FileHandlerInterface {
+class FileHandler {
 	/**
 	 * errors configuration array
 	 *
@@ -49,7 +49,7 @@ class FileHandler implements FileHandlerInterface {
 	 */
 	public function __construct($app)
 	{
-		$this->app = $app;
+		$this->app = &$app;
 	}
 
 	/* auto detect by extension */
@@ -69,11 +69,13 @@ class FileHandler implements FileHandlerInterface {
 	 *
 	 * ```
 	 */
-	public function get(string $filename)
+	public function load(string $filename)
 	{
-		$this->app->log('Get "'.$filename.'".');
+		log_msg('Get "'.$filename.'".');
 
 		$ext = pathinfo($filename,PATHINFO_EXTENSION);
+
+		log_msg('Extension "'.$ext.'".');
 
 		$data = [];
 
@@ -114,15 +116,15 @@ class FileHandler implements FileHandlerInterface {
 	 *
 	 * ```
 	 */
-	public function get_array(string $filename) : array
+	public function array(string $filename) : array
 	{
-		$this->app->log('Get Array "'.$filename.'".');
-
 		if (substr($filename,-6) == '.array') {
 			$filename = substr($filename,0,-6);
 		}
 
-		$filename = ROOTPATH.'/'.$this->create_path($this->app->config('data data').'/'.$filename.'.array');
+		$filename = $this->clean_path(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.array');
+
+		log_msg('Get Array "'.$filename.'".');
 
 		$array = '';
 
@@ -149,15 +151,15 @@ class FileHandler implements FileHandlerInterface {
 	 *
 	 * ```
 	 */
-	public function get_json(string $filename) : array
+	public function json(string $filename) : array
 	{
-		$this->app->log('Get JSON "'.$filename.'".');
-
 		if (substr($filename,-5) == '.json') {
 			$filename = substr($filename,0,-5);
 		}
 
-		$filename = ROOTPATH.'/'.$this->create_path($this->app->config('data data').'/'.$filename.'.json');
+		$filename = $this->clean_path(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.json');
+
+		log_msg('Get JSON "'.$filename.'".');
 
 		$array = '';
 
@@ -184,15 +186,15 @@ class FileHandler implements FileHandlerInterface {
 	 *
 	 * ```
 	 */
-	public function get_md(string $filename) : string
+	public function md(string $filename) : string
 	{
-		$this->app->log('Get Markdown "'.$filename.'".');
-
 		if (substr($filename,-3) == '.md') {
 			$filename = substr($filename,0,-3);
 		}
 
-		$filename = ROOTPATH.'/'.$this->create_path($this->app->config('data data').'/'.$filename.'.md');
+		$filename = $this->clean_path(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.md');
+
+		log_msg('Get Markdown "'.$filename.'".');
 
 		$html = '';
 
@@ -219,15 +221,15 @@ class FileHandler implements FileHandlerInterface {
 	 *
 	 * ```
 	 */
-	public function get_yaml(string $filename) : array
+	public function yaml(string $filename) : array
 	{
-		$this->app->log('Get YAML "'.$filename.'".');
-
 		if (substr($filename,-5) == '.yaml') {
 			$filename = substr($filename,0,-5);
 		}
 
-		$filename = ROOTPATH.'/'.$this->create_path($this->app->config('data data').'/'.$filename.'.yaml');
+		$filename = $this->clean_path(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.yaml');
+
+		log_msg('Get YAML "'.$filename.'".');
 
 		$yaml = '';
 
@@ -254,15 +256,15 @@ class FileHandler implements FileHandlerInterface {
 	 *
 	 * ```
 	 */
-	public function get_ini(string $filename) : array
+	public function ini(string $filename) : array
 	{
-		$this->app->log('Get ini "'.$filename.'".');
-
 		if (substr($filename,-4) == '.ini') {
 			$filename = substr($filename,0,-4);
 		}
 
-		$filename = ROOTPATH.'/'.$this->create_path($this->app->config('data data').'/'.$filename.'.ini');
+		$filename = $this->clean_path(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.ini');
+
+		log_msg('Get ini "'.$filename.'".');
 
 		$ini = [];
 
@@ -289,12 +291,8 @@ class FileHandler implements FileHandlerInterface {
 	 *
 	 * ```
 	 */
-	public function create_path(string $path) : string
+	public function clean_path(string $path) : string
 	{
-		$clean_path = str_replace('//','/',$path);
-		
-		$this->app->log('Cleaned "'.$clean_path.'".');
-		
-		return $clean_path;
+		return str_replace('//','/',$path);
 	}
 } /* end class */

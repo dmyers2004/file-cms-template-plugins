@@ -15,6 +15,6 @@ $options =>
 	['inverse']($options['_this']) # else ???- don't forget to send in the context
 
 */
-return function($options) {
-	return strtolower($options['fn']($options['_this']));
+$plugin['markdown'] = function($options) {
+	return app()->file->md($options['hash']['file']);
 };

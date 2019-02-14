@@ -69,14 +69,7 @@ class App {
 	 *
 	 * @var {{}}
 	 */
-	public $filehandler;
-	
-	/**
-	 * errors configuration array
-	 *
-	 * @var {{}}
-	 */
-	protected $handlebars_service;
+	public $file;
 
 	/**
 	 *
@@ -110,10 +103,27 @@ class App {
 		/* Application Config */
 		$this->config = $ini;
 
+		define('CACHEPATH',ROOTPATH.'/'.trim($this->config('cache path','/cache'),'/'));
+
+		if (!file_exists(CACHEPATH)) {
+			mkdir(CACHEPATH,0777,true);
+		}
+
+		define('DEBUG',($this->config('debug','0') == '1'));
+
+		if (DEBUG) {
+			error_reporting(E_ALL & ~E_NOTICE);
+			ini_set('display_errors', 1);
+		} else {
+			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
+			ini_set('display_errors', 0);
+		}
+	
 		/* use what they sent in or the default */
 		$this->server = ($server) ?? $_SERVER;
 
-		define('CACHEPATH',ROOTPATH.'/'.trim($this->config('cache path','/cache'),'/'));
+		/* Attach me to the application function / service locator */
+		app($this);
 
 		/* Put ANY (POST, PUT, DELETE) posted into into $_POST */
 		parse_str(file_get_contents('php://input'), $_POST);
@@ -138,14 +148,8 @@ class App {
 		$this->config['default template'] = $this->config('default template','index');
 		$this->config['error template'] = $this->config('error template','error');
 		$this->config['site path'] = $this->config('site path','/site/pages');
-		$this->config['template extension'] = $this->config('template extension','html');
+		$this->config['template extension'] = $this->config('handlebars.template extension','html');
 
-		$this->handlebars_service = ($services['services.handlebars']) ?? '\xo\handlebars';
-
-		$filehandler_service = ($services['services.filehandler']) ?? '\xo\filehandler';
-
-		$this->filehandler = new $filehandler_service($this);
-		
 		$this->data = $this->config('data',[]);
 	}
 
@@ -227,7 +231,13 @@ class App {
 	 */
 	public function output(bool $echo = false) : string
 	{
-		$this->handlebars = new $this->handlebars_service($this);
+		$filehandler_service = $this->config('services.filehandler','\xo\filehandler');
+
+		$this->file = new $filehandler_service($this);
+
+		$handlebars_service = ($services['services.handlebars']) ?? '\xo\handlebars';
+
+		$this->handlebars = new $handlebars_service($this);
 
 		$this->handlebars
 			->add_partial_path($this->config('partials path'))
@@ -236,22 +246,34 @@ class App {
 		log_msg('Output.');
 
 		/* build our view data array */
-		$view_data = ['data'=>$this->data,'config'=>$this->config,'error'=>$this->error_thrown];
-
-		$template_file = ROOTPATH.$this->config['site path'].'/'.trim($this->template,'/').$this->config['template extension'];
+		$view_data = [
+			'data'=>$this->data,
+			'page'=>$this->config('page',[]),
+			'config'=>$this->config,
+			'error'=>$this->error_thrown,
+		];
 
 		/* was a web page template specified? */
-		if ($template_file) {
+		if ($this->template) {
+			$template_file = ROOTPATH.$this->config['site path'].'/'.trim($this->template,'/').$this->config['template extension'];
+
 			log_msg('View "'.$template_file.'".');
 
 			$html = $this->handlebars->parse($template_file,$view_data);
 		}
 
-		/* was an error thrown by the page or because the template is missing? This replaces the contents of the previous html */
+		/**
+		 * was an error thrown by the page
+		 * or because the template is missing?
+		 * This replaces the contents of the previous html
+		 * so it can be set by the page
+		 */
 		if ($this->error_thrown) {
-			log_msg('View "'.$this->error_thrown['template'].'".');
+			$template_file = ROOTPATH.$this->config['site path'].'/'.trim($this->error_thrown['template'],'/').$this->config['template extension'];
 
-			$html = $this->handlebars->parse($this->error_thrown['template'],$view_data);
+			log_msg('View "'.$template_file.'".');
+
+			$html = $this->handlebars->parse($template_file,$view_data);
 		}
 
 		if ($echo) {
@@ -307,9 +329,7 @@ class App {
 		/* set the header responds code */
 		$this->responds_code($options['status']);
 
-		log_msg('Template "'.$options['template'].'".');
-		log_msg('Status "'.$options['status'].'".');
-		log_msg('Message "'.$options['msg'].'".');
+		log_msg('Template "'.$options['template'].'"','Status "'.$options['status'].'"','Message "'.$options['msg'].'".');
 
 		/* save these for later */
 		$this->error_thrown = $options;
@@ -357,12 +377,12 @@ class App {
 	{
 		if (strpos($name,'.') !== false) {
 			list($arg1,$arg2) = explode('.',$name,2);
-			
+
 			$value = (isset($this->config[$arg1][$arg2])) ? $this->config[$arg1][$arg2] : $default;
 		} else {
 			$value = (isset($this->config[$name])) ? $this->config[$name] : $default;
 		}
-		
+
 		return $value;
 	}
 
@@ -385,9 +405,9 @@ class App {
 	public function site_file_exists(string $template_name) : bool
 	{
 		$path = ROOTPATH.$this->config['site path'].'/'.trim($template_name,'/').'.'.ltrim($this->config['template extension'],'.');
-	
+
 		log_msg('Does "'.$path.'" exist.');
-		
+
 		return file_exists($path);
 	}
 
@@ -411,26 +431,31 @@ class App {
 	{
 		log_msg('Load Remap INI file "'.$filename.'".');
 
-		$ini = [];
+		$cache_file_path = CACHEPATH.'/app.remap.ini.php';
 
-		if (file_exists($filename)) {
-			$lines = file($filename);
+		if ($this->debug || !file_exists($cache_file_path)) {
+			$ini = [];
 
-			foreach ($lines as $line) {
-				$line = trim($line);
+			if (file_exists($filename)) {
+				$lines = file($filename);
 
-				if ($line[0] != '#' && $line[0] != ';') {
-					$x = str_getcsv($line,'=');
+				foreach ($lines as $line) {
+					$line = trim($line);
 
-					if (count($x) == 2) {
-						$ini[trim($x[0])] = trim($x[1]);
+					if ($line[0] != '#' && $line[0] != ';') {
+						$x = str_getcsv($line,'=');
+
+						if (count($x) == 2) {
+							$ini[trim($x[0])] = trim($x[1]);
+						}
 					}
 				}
 			}
 
+			atomic_file_put_contents($cache_file_path,'<?php return '.var_export($ini,true).';');
 		}
 
-		return $ini;
+		return include $cache_file_path;
 	}
 
 } /* end class */

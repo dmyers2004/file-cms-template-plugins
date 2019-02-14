@@ -14,10 +14,7 @@ $options =>
 	['fn']($options['_this']) # if ??? - don't forget to send in the context
 	['inverse']($options['_this']) # else ???- don't forget to send in the context
 
-	_this is a the data array sent in
-	
-	{{xo.get name="age"}}
 */
-return function($options) {
-	return $options['_this'][$options['hash']['name']];
+$plugin['lowercase'] = function($options) {
+	return strtolower($options['fn']($options['_this']));
 };

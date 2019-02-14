@@ -15,7 +15,7 @@ $options =>
 	['inverse']($options['_this']) # else ???- don't forget to send in the context
 
 */
-return function($options) {
+$plugin['merge'] = function($options) {
 	foreach (['array','ini','json','yaml'] as $ext) {
 		if (isset($options['hash'][$ext])) {
 			$filename = $options['hash'][$ext].'.'.$ext;
@@ -23,7 +23,7 @@ return function($options) {
 		}
 	}
 
-	$data = (array)app()->get($filename);
+	$data = (array)app()->file->get($filename);
 
 	if (isset($data['template'])) {
 		$template = $data['template'];

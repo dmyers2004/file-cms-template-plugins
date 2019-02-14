@@ -1,27 +1,72 @@
 <?php 
 
-function app($application=null)
+/**
+ *
+ * Attach or retrieve instance of Application object
+ *
+ * @access global
+ *
+ * @param $application null
+ *
+ * @return application
+ *
+ */
+if (!function_exists('app'))
 {
-	global $app;
+	function app($app=null)
+	{
+		global $application_instance_do_not_use;
+		
+		if ($app) {
+			$application_instance_do_not_use = $app;
+		}
 	
-	if ($application) {
-		$app = $application;
+		return $application_instance_do_not_use;
 	}
-
-	return $app;
 }
 
+/**
+ *
+ * Simple Write to log file
+ *
+ * @access global
+ *
+ * @param mutiple
+ *
+ * @return void
+ *
+ */
 if (!function_exists('log_msg'))
 {
 	function log_msg() : void
 	{
-		file_put_contents(ROOTPATH.'/debug.log',date('r').chr(9).trim(implode(PHP_EOL,func_get_args())).PHP_EOL,FILE_APPEND | LOCK_EX);
+		if (DEBUG) {
+			$lines = '';
+			
+			foreach (func_get_args() as $msg) {
+				$lines .= date('r').chr(9).$msg.PHP_EOL;
+			}
+			
+			file_put_contents(ROOTPATH.'/debug.log',$lines,FILE_APPEND | LOCK_EX);
+		}
 	}
 }
 
+/**
+ *
+ * Wrapper to get application configuration values with optional default value
+ *
+ * @access global
+ *
+ * @param string $name
+ * @param $default null
+ *
+ * @return mixed
+ *
+ */
 if (!function_exists('config'))
 {
-	function config($name,$default=null)
+	function config(string $name,$default=null)
 	{
 		return app()->config($name,$default);
 	}

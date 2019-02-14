@@ -1,0 +1,15 @@
+{{#append2 section="page" key="links"}}
+<link rel="stylesheet" href="css/example.css">
+{{/append2}}
+
+{{> header}}
+
+{{xo:set name="cats" value="no"}}
+
+<h1>FooBar!</h1>
+
+{{ data.name }}
+
+{{xo:get name="cats"}}
+
+{{> footer}}
