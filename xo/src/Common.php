@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  *
@@ -11,8 +11,7 @@
  * @return application
  *
  */
-if (!function_exists('app'))
-{
+if (!function_exists('app')) {
 	function app($app=null)
 	{
 		global $application_instance_do_not_use;
@@ -36,8 +35,7 @@ if (!function_exists('app'))
  * @return void
  *
  */
-if (!function_exists('log_msg'))
-{
+if (!function_exists('log_msg')) {
 	function log_msg() : void
 	{
 		if (DEBUG) {
@@ -47,7 +45,7 @@ if (!function_exists('log_msg'))
 				$lines .= date('r').chr(9).$msg.PHP_EOL;
 			}
 			
-			file_put_contents(ROOTPATH.'/debug.log',$lines,FILE_APPEND | LOCK_EX);
+			file_put_contents(ROOTPATH.'/debug.log', $lines, FILE_APPEND | LOCK_EX);
 		}
 	}
 }
@@ -64,11 +62,10 @@ if (!function_exists('log_msg'))
  * @return mixed
  *
  */
-if (!function_exists('config'))
-{
-	function config(string $name,$default=null)
+if (!function_exists('config')) {
+	function config(string $name, $default=null)
 	{
-		return app()->config($name,$default);
+		return app()->config($name, $default);
 	}
 }
 
@@ -81,7 +78,7 @@ if (!function_exists('config'))
  * @return int the number of bytes that were written to the file.
  */
 if (!function_exists('atomic_file_put_contents')) {
-	function atomic_file_put_contents(string $filepath,$content) : int
+	function atomic_file_put_contents(string $filepath, $content) : int
 	{
 		/* get the path where you want to save this file so we can put our file in the same file */
 		$dirname = dirname($filepath);

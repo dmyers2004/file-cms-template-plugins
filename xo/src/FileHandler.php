@@ -23,12 +23,13 @@ namespace xo;
  *
  */
 
-class FileHandler {
+class FileHandler
+{
 	/**
 	 * errors configuration array
 	 *
 	 * @var {{}}
-	 */	
+	 */
 	protected $app;
 	
 	/**
@@ -40,7 +41,7 @@ class FileHandler {
 	 * @param $app
 	 *
 	 * @throws
-	 * @return 
+	 * @return
 	 *
 	 * #### Example
 	 * ```
@@ -62,7 +63,7 @@ class FileHandler {
 	 * @param string $filename
 	 *
 	 * @throws
-	 * @return 
+	 * @return
 	 *
 	 * #### Example
 	 * ```
@@ -73,7 +74,7 @@ class FileHandler {
 	{
 		log_msg('Get "'.$filename.'".');
 
-		$ext = pathinfo($filename,PATHINFO_EXTENSION);
+		$ext = pathinfo($filename, PATHINFO_EXTENSION);
 
 		log_msg('Extension "'.$ext.'".');
 
@@ -118,8 +119,8 @@ class FileHandler {
 	 */
 	public function array(string $filename) : array
 	{
-		if (substr($filename,-6) == '.array') {
-			$filename = substr($filename,0,-6);
+		if (substr($filename, -6) == '.array') {
+			$filename = substr($filename, 0, -6);
 		}
 
 		$filename = $this->clean_path(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.array');
@@ -153,8 +154,8 @@ class FileHandler {
 	 */
 	public function json(string $filename) : array
 	{
-		if (substr($filename,-5) == '.json') {
-			$filename = substr($filename,0,-5);
+		if (substr($filename, -5) == '.json') {
+			$filename = substr($filename, 0, -5);
 		}
 
 		$filename = $this->clean_path(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.json');
@@ -164,7 +165,7 @@ class FileHandler {
 		$array = '';
 
 		if (file_exists($filename)) {
-			$array = json_decode(file_get_contents($filename),true);
+			$array = json_decode(file_get_contents($filename), true);
 		}
 
 		return $array;
@@ -188,8 +189,8 @@ class FileHandler {
 	 */
 	public function md(string $filename) : string
 	{
-		if (substr($filename,-3) == '.md') {
-			$filename = substr($filename,0,-3);
+		if (substr($filename, -3) == '.md') {
+			$filename = substr($filename, 0, -3);
 		}
 
 		$filename = $this->clean_path(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.md');
@@ -223,8 +224,8 @@ class FileHandler {
 	 */
 	public function yaml(string $filename) : array
 	{
-		if (substr($filename,-5) == '.yaml') {
-			$filename = substr($filename,0,-5);
+		if (substr($filename, -5) == '.yaml') {
+			$filename = substr($filename, 0, -5);
 		}
 
 		$filename = $this->clean_path(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.yaml');
@@ -258,8 +259,8 @@ class FileHandler {
 	 */
 	public function ini(string $filename) : array
 	{
-		if (substr($filename,-4) == '.ini') {
-			$filename = substr($filename,0,-4);
+		if (substr($filename, -4) == '.ini') {
+			$filename = substr($filename, 0, -4);
 		}
 
 		$filename = $this->clean_path(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.ini');
@@ -269,7 +270,7 @@ class FileHandler {
 		$ini = [];
 
 		if (file_exists($filename)) {
-			$ini = parse_ini_file($filename,true,INI_SCANNER_NORMAL);
+			$ini = parse_ini_file($filename, true, INI_SCANNER_NORMAL);
 		}
 
 		return $ini;
@@ -293,6 +294,6 @@ class FileHandler {
 	 */
 	public function clean_path(string $path) : string
 	{
-		return str_replace('//','/',$path);
+		return str_replace('//', '/', $path);
 	}
 } /* end class */

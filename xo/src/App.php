@@ -21,7 +21,8 @@ namespace xo;
  * @filesource
  *
  */
-class App {
+class App
+{
 	/**
 	 * errors configuration array
 	 *
@@ -88,13 +89,13 @@ class App {
 	 *
 	 * ```
 	 */
-	public function __construct(string $config_path,array $server = null)
+	public function __construct(string $config_path, array $server = null)
 	{
 		if (!file_exists($config_path)) {
 			throw new \Exception('Configuration file "'.$config_path.'" does not exist.');
 		}
 
-		$ini = parse_ini_file($config_path,true,INI_SCANNER_NORMAL);
+		$ini = parse_ini_file($config_path, true, INI_SCANNER_NORMAL);
 
 		if (!$ini) {
 			throw new \Exception('Configuration file "'.$config_path.'" not formatted correctly.');
@@ -103,13 +104,13 @@ class App {
 		/* Application Config */
 		$this->config = $ini;
 
-		define('CACHEPATH',ROOTPATH.'/'.trim($this->config('cache path','/cache'),'/'));
+		define('CACHEPATH', ROOTPATH.'/'.trim($this->config('cache path', '/cache'), '/'));
 
 		if (!file_exists(CACHEPATH)) {
-			mkdir(CACHEPATH,0777,true);
+			mkdir(CACHEPATH, 0777, true);
 		}
 
-		define('DEBUG',($this->config('debug','0') == '1'));
+		define('DEBUG', ($this->config('debug', '0') == '1'));
 
 		if (DEBUG) {
 			error_reporting(E_ALL & ~E_NOTICE);
@@ -118,7 +119,7 @@ class App {
 			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
 			ini_set('display_errors', 0);
 		}
-	
+		
 		/* use what they sent in or the default */
 		$this->server = ($server) ?? $_SERVER;
 
@@ -141,16 +142,16 @@ class App {
 		$this->config['uri'] = trim(urldecode(substr(parse_url($this->server['REQUEST_URI'], PHP_URL_PATH), strlen(dirname($this->server['SCRIPT_NAME'])))), '/');
 
 		/* get the uri pieces */
-		$this->config['segs'] = explode('/',$this->config['uri']);
+		$this->config['segs'] = explode('/', $this->config['uri']);
 
 		/* set to default unless something provided */
-		$this->config['data path'] = $this->config('data path','/site/data/');
-		$this->config['default template'] = $this->config('default template','index');
-		$this->config['error template'] = $this->config('error template','error');
-		$this->config['site path'] = $this->config('site path','/site/pages');
-		$this->config['template extension'] = $this->config('handlebars.template extension','html');
+		$this->config['data path'] = $this->config('data path', '/site/data/');
+		$this->config['default template'] = $this->config('default template', 'index');
+		$this->config['error template'] = $this->config('error template', 'error');
+		$this->config['site path'] = $this->config('site path', '/site/pages');
+		$this->config['template extension'] = $this->config('handlebars.template extension', 'html');
 
-		$this->data = $this->config('data',[]);
+		$this->data = $this->config('data', []);
 	}
 
 	/**
@@ -184,10 +185,10 @@ class App {
 		} else {
 			log_msg('Not Found, Let\'s try to remap.');
 
-			foreach ($this->load_remap_ini(ROOTPATH.$this->config('page remap file','remap.ini')) as $regex=>$remap_template) {
-				log_msg('Testing Map #^/'.ltrim($regex,'/').'$#im against /'.$this->config['template'].'.');
+			foreach ($this->load_remap_ini(ROOTPATH.$this->config('page remap file', 'remap.ini')) as $regex=>$remap_template) {
+				log_msg('Testing Map #^/'.ltrim($regex, '/').'$#im against /'.$this->config['template'].'.');
 
-				if (preg_match('#^/'.ltrim($regex,'/').'$#im','/'.$this->config['template'],$params,PREG_OFFSET_CAPTURE,0)) {
+				if (preg_match('#^/'.ltrim($regex, '/').'$#im', '/'.$this->config['template'], $params, PREG_OFFSET_CAPTURE, 0)) {
 					log_msg('Found.');
 					$this->template = $this->config['remap_template'] = $remap_template;
 
@@ -207,7 +208,6 @@ class App {
 			} else {
 				log_msg('Yes.');
 			}
-
 		}
 
 		return $this;
@@ -231,7 +231,7 @@ class App {
 	 */
 	public function output(bool $echo = false) : string
 	{
-		$filehandler_service = $this->config('services.filehandler','\xo\filehandler');
+		$filehandler_service = $this->config('services.filehandler', '\xo\filehandler');
 
 		$this->file = new $filehandler_service($this);
 
@@ -240,26 +240,27 @@ class App {
 		$this->handlebars = new $handlebars_service($this);
 
 		$this->handlebars
-			->add_partial_path($this->config('partials path'))
-			->add_plugin_path($this->config('plugin path'));
+						->compiled_path(CACHEPATH)
+						->add_partial_path($this->config('partials path'))
+						->add_plugin_path($this->config('plugin path'));
 
 		log_msg('Output.');
 
 		/* build our view data array */
 		$view_data = [
-			'data'=>$this->data,
-			'page'=>$this->config('page',[]),
-			'config'=>$this->config,
-			'error'=>$this->error_thrown,
-		];
+						'data'=>$this->data,
+						'page'=>$this->config('page', []),
+						'config'=>$this->config,
+						'error'=>$this->error_thrown,
+				];
 
 		/* was a web page template specified? */
 		if ($this->template) {
-			$template_file = ROOTPATH.$this->config['site path'].'/'.trim($this->template,'/').$this->config['template extension'];
+			$template_file = ROOTPATH.$this->config['site path'].'/'.trim($this->template, '/').$this->config['template extension'];
 
 			log_msg('View "'.$template_file.'".');
 
-			$html = $this->handlebars->parse($template_file,$view_data);
+			$html = $this->handlebars->parse($template_file, $view_data);
 		}
 
 		/**
@@ -269,11 +270,11 @@ class App {
 		 * so it can be set by the page
 		 */
 		if ($this->error_thrown) {
-			$template_file = ROOTPATH.$this->config['site path'].'/'.trim($this->error_thrown['template'],'/').$this->config['template extension'];
+			$template_file = ROOTPATH.$this->config['site path'].'/'.trim($this->error_thrown['template'], '/').$this->config['template extension'];
 
 			log_msg('View "'.$template_file.'".');
 
-			$html = $this->handlebars->parse($template_file,$view_data);
+			$html = $this->handlebars->parse($template_file, $view_data);
 		}
 
 		if ($echo) {
@@ -312,12 +313,12 @@ class App {
 		log_msg('Error.');
 
 		$defaults = [
-			'msg'=>'Uh Oh!',
-			'status'=>404,
-			'template'=>$this->config['error template'],
-		];
+						'msg'=>'Uh Oh!',
+						'status'=>404,
+						'template'=>$this->config['error template'],
+				];
 
-		$options = array_merge($defaults,$options);
+		$options = array_merge($defaults, $options);
 
 		if (!$this->site_file_exists($options['template'])) {
 			throw new \Exception(__METHOD__.' view "'.$options['template'].'" not found.');
@@ -329,7 +330,7 @@ class App {
 		/* set the header responds code */
 		$this->responds_code($options['status']);
 
-		log_msg('Template "'.$options['template'].'"','Status "'.$options['status'].'"','Message "'.$options['msg'].'".');
+		log_msg('Template "'.$options['template'].'"', 'Status "'.$options['status'].'"', 'Message "'.$options['msg'].'".');
 
 		/* save these for later */
 		$this->error_thrown = $options;
@@ -373,10 +374,10 @@ class App {
 	 *
 	 * ```
 	 */
-	public function config(string $name,$default=null)
+	public function config(string $name, $default=null)
 	{
-		if (strpos($name,'.') !== false) {
-			list($arg1,$arg2) = explode('.',$name,2);
+		if (strpos($name, '.') !== false) {
+			list($arg1, $arg2) = explode('.', $name, 2);
 
 			$value = (isset($this->config[$arg1][$arg2])) ? $this->config[$arg1][$arg2] : $default;
 		} else {
@@ -404,7 +405,7 @@ class App {
 	 */
 	public function site_file_exists(string $template_name) : bool
 	{
-		$path = ROOTPATH.$this->config['site path'].'/'.trim($template_name,'/').'.'.ltrim($this->config['template extension'],'.');
+		$path = ROOTPATH.$this->config['site path'].'/'.trim($template_name, '/').'.'.ltrim($this->config['template extension'], '.');
 
 		log_msg('Does "'.$path.'" exist.');
 
@@ -443,7 +444,7 @@ class App {
 					$line = trim($line);
 
 					if ($line[0] != '#' && $line[0] != ';') {
-						$x = str_getcsv($line,'=');
+						$x = str_getcsv($line, '=');
 
 						if (count($x) == 2) {
 							$ini[trim($x[0])] = trim($x[1]);
@@ -452,10 +453,9 @@ class App {
 				}
 			}
 
-			atomic_file_put_contents($cache_file_path,'<?php return '.var_export($ini,true).';');
+			atomic_file_put_contents($cache_file_path, '<?php return '.var_export($ini, true).';');
 		}
 
 		return include $cache_file_path;
 	}
-
 } /* end class */
