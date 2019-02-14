@@ -6,3 +6,4 @@ xo/R&D/*
 public/assets/*
 .htaccess
 R&D
+/debug.log
