@@ -91,6 +91,9 @@ class App
 	 */
 	public function __construct(string $config_path, array $server = null)
 	{
+		/* set the most basic exception handler */
+		set_exception_handler([$this,'exception_handler']);
+
 		if (!file_exists($config_path)) {
 			throw new \Exception('Configuration file "'.$config_path.'" does not exist.');
 		}
@@ -114,12 +117,18 @@ class App
 			ini_set('display_errors', 0);
 		}
 
-		define('CACHEPATH', ROOTPATH.'/'.trim($this->config('cache path', '/cache'), '/'));
+		/* set a new exception handler if they have one specified */
+		set_exception_handler([$this,$this->config('exception_handler','exception_handler')]);
 
-		if (!file_exists(CACHEPATH)) {
-			mkdir(CACHEPATH, 0777, true);
+		/* make cache path ready to use */
+		$this->config['cache path'] = ROOTPATH.'/'.trim($this->config('cache path', '/cache'), '/');
+
+		if (!file_exists($this->config['cache path'])) {
+			$umask = umask(0);
+			mkdir($this->config['cache path'], 0777, true);
+			umask($umask);
 		}
-		
+
 		/* use what they sent in or the default */
 		$this->server = ($server) ?? $_SERVER;
 
@@ -235,14 +244,14 @@ class App
 
 		$this->file = new $filehandler_service($this);
 
-		$handlebars_service = ($services['services.handlebars']) ?? '\xo\Handlebars';
+		$handlebars_service = $this->config('services.handlebars', '\xo\Handlebars');
 
 		$this->handlebars = new $handlebars_service($this);
 
 		$this->handlebars
-						->compiled_path(CACHEPATH)
-						->add_partial_path($this->config('partials path'))
-						->add_plugin_path($this->config('plugin path'));
+						->compiled_path($this->config['cache path'])
+						->add_partial_path($this->config['handlebars']['partials path'])
+						->add_plugin_path($this->config['handlebars']['plugin path']);
 
 		log_msg('Output.');
 
@@ -432,7 +441,7 @@ class App
 	{
 		log_msg('Load Remap INI file "'.$filename.'".');
 
-		$cache_file_path = CACHEPATH.'/app.remap.ini.php';
+		$cache_file_path = $this->config['cache path'].'/app.remap.ini.php';
 
 		if ($this->debug || !file_exists($cache_file_path)) {
 			$ini = [];
@@ -458,4 +467,10 @@ class App
 
 		return include $cache_file_path;
 	}
+	
+	public function exception_handler($exception) {
+	  echo '<div style="padding: 32px;font-family:monospace"><h2>Uh oh!<h2>Uncaught exception: '.$exception->getMessage().'</div>';
+	  exit(1);
+	}
+	
 } /* end class */

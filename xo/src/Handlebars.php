@@ -60,7 +60,7 @@ class Handlebars
 	 *
 	 * @var string
 	 */
-	protected $compiled_path = CACHEPATH;
+	protected $compiled_path;
 
 	/**
 	 * Handlebars Plugin Regular Expression
@@ -132,9 +132,9 @@ class Handlebars
 			->flags(config('handlebars.flags', $this->default_flags))
 			->template_extension(config('handlebars.template extension', $this->template_extension))
 			->plugin_regex(config('handlebars.plugin regex', $this->plugin_regex))
-			->compiled_path(config('handlebars.cache path', $this->compiled_path))
-			->add_partial_path(config('handlebars.partials path'))
-			->add_plugin_path(config('handlebars.plugin path'));
+			->compiled_path(config('handlebars.cache path', config('cache path')))
+			->add_partial_path(config('handlebars.partials path',null))
+			->add_plugin_path(config('handlebars.plugin path',null));
 	}
 
 	/**
@@ -392,13 +392,19 @@ class Handlebars
 	{
 		$this->compiled_path = '/'.trim($compiled_path, '/');
 
-		/* testing is writable in compile since we don't actually need to "write" when we change this */
-		if (!realpath($this->compiled_path)) {
+		if (!file_exists($this->compiled_path)) {
+			$umask = umask(0);
 			mkdir($this->compiled_path, 0777, true);
+			umask($umask);
+		}
 
-			if (!realpath($this->compiled_path)) {
-				throw new \Exception(__METHOD__.' Cannot locate compiled handlebars folder "'.$this->compiled_path.'"');
-			}
+		/**
+		 * testing is writable in compile function
+		 * since we don't actually need to "write" 
+		 * when we call compiled_path() this
+		 */
+		if (!realpath($this->compiled_path)) {
+			throw new \Exception(__METHOD__.' Cannot locate compiled handlebars folder "'.$this->compiled_path.'"');
 		}
 
 		return $this;
@@ -422,13 +428,17 @@ class Handlebars
 	 */
 	protected function load_plugins() : Handlebars
 	{
-		$cache_file_path = CACHEPATH.'/handlebars.plugins.php';
+		$cache_file_path = config('cache path').'/handlebars.plugins.php';
 
 		if ($this->debug || !file_exists($cache_file_path)) {
 			$content = '';
 
 			/* attach the plugins */
 			foreach ($this->plugins_paths as $plugin_path) {
+				if (!file_exists(ROOTPATH.$plugin_path)) {
+					throw new \Exception('Plugin path "'.$plugin_path.'" not found.');
+				}
+
 				$plugin_files = new \RegexIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(ROOTPATH.$plugin_path)), '#^'.$this->plugin_regex.'$#i', \RecursiveRegexIterator::GET_MATCH);
 
 				foreach ($plugin_files as $plugin_file) {
@@ -487,7 +497,7 @@ class Handlebars
 	 */
 	protected function load_partials() : Handlebars
 	{
-		$cache_file_path = CACHEPATH.'/handlebars.partials.php';
+		$cache_file_path = config('cache path').'/handlebars.partials.php';
 
 		if ($this->debug || !file_exists($cache_file_path)) {
 			$partials = [];
@@ -653,10 +663,12 @@ class Handlebars
 			throw new \Exception(__METHOD__.' Cannot write to folder "'.$this->compiled_path.'"');
 		}
 
-		/* delete the compiled file if we are in debug mode */
+		/* delete the compiled file if we are in debug mode or if the recompile flag is true */
 		if ($this->debug || $this->recompile) {
 			if (file_exists($compiled_filename)) {
-				unlink($compiled_filename);
+				if (!unlink($compiled_filename)) {
+					throw new \Exception('Cannot unlink compiled template file.');
+				}
 			}
 		}
 
@@ -664,7 +676,7 @@ class Handlebars
 			$compiled_php = $this->_compile($template_string, $type);
 
 			if (empty($compiled_php)) {
-				echo 'Error compiling handlebars template "'.$template.'".'.PHP_EOL;
+				throw new \Exception('Error compiling handlebars template "'.$template.'".');
 			}
 		}
 
@@ -775,7 +787,7 @@ class Handlebars
 
 				if ($fileinfo['extension'] === trim($this->template_extension, '.')) {
 					if (!$this->compile(file_get_contents($template), $template)) {
-						echo 'Error compiling handlebars template "'.$template.'".'.PHP_EOL;
+						throw new \Exception('Error compiling handlebars template "'.$template.'".');
 					}
 				}
 			}
