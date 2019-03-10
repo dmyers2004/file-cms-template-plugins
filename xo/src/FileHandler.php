@@ -31,7 +31,7 @@ class FileHandler
 	 * @var {{}}
 	 */
 	protected $app;
-	
+
 	/**
 	 *
 	 * Description Here
@@ -70,31 +70,31 @@ class FileHandler
 	 *
 	 * ```
 	 */
-	public function load(string $filename)
+	public function load(string $filename) /* mixed */
 	{
-		log_msg('Get "'.$filename.'".');
+		logMsg('Get "'.$filename.'".');
 
 		$ext = pathinfo($filename, PATHINFO_EXTENSION);
 
-		log_msg('Extension "'.$ext.'".');
+		logMsg('Extension "'.$ext.'".');
 
 		$data = [];
 
 		switch ($ext) {
 			case 'md':
-				$data = $this->get_md($filename);
+				$data = $this->md($filename);
 			break;
 			case 'yaml':
-				$data = $this->get_yaml($filename);
+				$data = $this->yaml($filename);
 			break;
 			case 'ini':
-				$data = $this->get_ini($filename);
+				$data = $this->ini($filename);
 			break;
 			case 'array':
-				$data = $this->get_array($filename);
+				$data = $this->array($filename);
 			break;
 			case 'json':
-				$data = $this->get_json($filename);
+				$data = $this->json($filename);
 			break;
 		}
 
@@ -123,9 +123,9 @@ class FileHandler
 			$filename = substr($filename, 0, -6);
 		}
 
-		$filename = $this->clean_path(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.array');
+		$filename = $this->cleanPath(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.array');
 
-		log_msg('Get Array "'.$filename.'".');
+		logMsg('Get Array "'.$filename.'".');
 
 		$array = '';
 
@@ -158,9 +158,9 @@ class FileHandler
 			$filename = substr($filename, 0, -5);
 		}
 
-		$filename = $this->clean_path(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.json');
+		$filename = $this->cleanPath(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.json');
 
-		log_msg('Get JSON "'.$filename.'".');
+		logMsg('Get JSON "'.$filename.'".');
 
 		$array = '';
 
@@ -193,9 +193,9 @@ class FileHandler
 			$filename = substr($filename, 0, -3);
 		}
 
-		$filename = $this->clean_path(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.md');
+		$filename = $this->cleanPath(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.md');
 
-		log_msg('Get Markdown "'.$filename.'".');
+		logMsg('Get Markdown "'.$filename.'".');
 
 		$html = '';
 
@@ -228,9 +228,9 @@ class FileHandler
 			$filename = substr($filename, 0, -5);
 		}
 
-		$filename = $this->clean_path(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.yaml');
+		$filename = $this->cleanPath(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.yaml');
 
-		log_msg('Get YAML "'.$filename.'".');
+		logMsg('Get YAML "'.$filename.'".');
 
 		$yaml = '';
 
@@ -263,9 +263,9 @@ class FileHandler
 			$filename = substr($filename, 0, -4);
 		}
 
-		$filename = $this->clean_path(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.ini');
+		$filename = $this->cleanPath(ROOTPATH.'/'.$this->app->config('data path').'/'.$filename.'.ini');
 
-		log_msg('Get ini "'.$filename.'".');
+		logMsg('Get ini "'.$filename.'".');
 
 		$ini = [];
 
@@ -292,8 +292,9 @@ class FileHandler
 	 *
 	 * ```
 	 */
-	public function clean_path(string $path) : string
+	public function cleanPath(string $path) : string
 	{
 		return str_replace('//', '/', $path);
 	}
+
 } /* end class */

@@ -12,14 +12,14 @@
  *
  */
 if (!function_exists('app')) {
-	function app($app=null)
+	function app($app = null)
 	{
 		global $application_instance_do_not_use;
-		
+
 		if ($app) {
 			$application_instance_do_not_use = $app;
 		}
-	
+
 		return $application_instance_do_not_use;
 	}
 }
@@ -35,16 +35,16 @@ if (!function_exists('app')) {
  * @return void
  *
  */
-if (!function_exists('log_msg')) {
-	function log_msg() : void
+if (!function_exists('logMsg')) {
+	function logMsg() : void
 	{
 		if (DEBUG) {
 			$lines = '';
-			
+
 			foreach (func_get_args() as $msg) {
 				$lines .= date('r').chr(9).$msg.PHP_EOL;
 			}
-			
+
 			file_put_contents(ROOTPATH.'/debug.log', $lines, FILE_APPEND | LOCK_EX);
 		}
 	}

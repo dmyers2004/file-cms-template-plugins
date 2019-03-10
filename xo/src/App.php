@@ -35,7 +35,7 @@ class App
 	 *
 	 * @var {{}}
 	 */
-	protected $error_thrown = false; /* boolean false or array */
+	protected $errorThrown = false; /* boolean false or array */
 
 	/**
 	 * errors configuration array
@@ -92,20 +92,18 @@ class App
 	public function __construct(string $config_path, array $server = null)
 	{
 		/* set the most basic exception handler */
-		set_exception_handler([$this,'exception_handler']);
+		set_exception_handler([$this,'exceptionHandler']);
 
 		if (!file_exists($config_path)) {
 			throw new \Exception('Configuration file "'.$config_path.'" does not exist.');
 		}
 
-		$ini = parse_ini_file($config_path, true, INI_SCANNER_NORMAL);
+		/* Application Config */
+		$this->config = parse_ini_file($config_path, true, INI_SCANNER_NORMAL);
 
-		if (!$ini) {
+		if (!is_array($this->config)) {
 			throw new \Exception('Configuration file "'.$config_path.'" not formatted correctly.');
 		}
-
-		/* Application Config */
-		$this->config = $ini;
 
 		define('DEBUG', ($this->config('debug', '0') == '1'));
 
@@ -118,7 +116,7 @@ class App
 		}
 
 		/* set a new exception handler if they have one specified */
-		set_exception_handler([$this,$this->config('exception_handler','exception_handler')]);
+		set_exception_handler([$this,$this->config('exception handler','exceptionHandler')]);
 
 		/* make cache path ready to use */
 		$this->config['cache path'] = ROOTPATH.'/'.trim($this->config('cache path', '/cache'), '/');
@@ -185,24 +183,24 @@ class App
 
 		$this->config['remap_template'] = false;
 
-		log_msg('Looking for "'.$this->config['template'].'".');
+		logMsg('Looking for "'.$this->config['template'].'".');
 
 		/* first see if this file actually exists? */
-		if ($this->site_file_exists($this->config['template'])) {
-			log_msg('Found.');
+		if ($this->siteFileExists($this->config['template'])) {
+			logMsg('Found.');
 			$this->template = $this->config['template'];
 		} else {
-			log_msg('Not Found, Let\'s try to remap.');
+			logMsg('Not Found, Let\'s try to remap.');
 
-			foreach ($this->load_remap_ini(ROOTPATH.$this->config('page remap file', 'remap.ini')) as $regex=>$remap_template) {
-				log_msg('Testing Map #^/'.ltrim($regex, '/').'$#im against /'.$this->config['template'].'.');
+			foreach ($this->loadRemapIni(ROOTPATH.$this->config('page remap file', 'remap.ini')) as $regex=>$remap_template) {
+				logMsg('Testing Map #^/'.ltrim($regex, '/').'$#im against /'.$this->config['template'].'.');
 
 				if (preg_match('#^/'.ltrim($regex, '/').'$#im', '/'.$this->config['template'], $params, PREG_OFFSET_CAPTURE, 0)) {
-					log_msg('Found.');
+					logMsg('Found.');
 					$this->template = $this->config['remap_template'] = $remap_template;
 
 					foreach ($params as $key=>$values) {
-						log_msg('Captured '.$key.' '.$values[0].'.');
+						logMsg('Captured '.$key.' '.$values[0].'.');
 						$this->config['captured'][$key] = $values[0];
 					}
 
@@ -210,12 +208,12 @@ class App
 				}
 			}
 
-			if (!$this->site_file_exists($this->template)) {
-				log_msg('No.');
+			if (!$this->siteFileExists($this->template)) {
+				logMsg('No.');
 				/* nope! error page */
 				$this->error('Page Not Found');
 			} else {
-				log_msg('Yes.');
+				logMsg('Yes.');
 			}
 		}
 
@@ -240,36 +238,40 @@ class App
 	 */
 	public function output(bool $echo = false) : string
 	{
+		logMsg('Setup File Service.');
+
 		$filehandler_service = $this->config('services.filehandler', '\xo\FileHandler');
 
 		$this->file = new $filehandler_service($this);
+
+		logMsg('Setup Handlebars Service.');
 
 		$handlebars_service = $this->config('services.handlebars', '\xo\Handlebars');
 
 		$this->handlebars = new $handlebars_service($this);
 
 		$this->handlebars
-						->compiled_path($this->config['cache path'])
-						->add_partial_path($this->config['handlebars']['partials path'])
-						->add_plugin_path($this->config['handlebars']['plugin path']);
+						->compiledPath($this->config['cache path'])
+						->addPartialPath($this->config['handlebars']['partials path'])
+						->addPluginPath($this->config['handlebars']['plugin path']);
 
-		log_msg('Output.');
+		logMsg('Output.');
 
 		/* build our view data array */
-		$view_data = [
-						'data'=>$this->data,
-						'page'=>$this->config('page', []),
-						'config'=>$this->config,
-						'error'=>$this->error_thrown,
-				];
+		$viewData = [
+			'data'=>$this->data,
+			'page'=>$this->config('page', []),
+			'config'=>$this->config,
+			'error'=>$this->errorThrown,
+		];
 
 		/* was a web page template specified? */
 		if ($this->template) {
-			$template_file = ROOTPATH.$this->config['site path'].'/'.trim($this->template, '/').$this->config['template extension'];
+			$templateFile = ROOTPATH.$this->config['site path'].'/'.trim($this->template, '/').$this->config['template extension'];
 
-			log_msg('View "'.$template_file.'".');
+			logMsg('View "'.$templateFile.'".');
 
-			$html = $this->handlebars->parse($template_file, $view_data);
+			$html = $this->handlebars->parse($templateFile, $viewData);
 		}
 
 		/**
@@ -278,12 +280,12 @@ class App
 		 * This replaces the contents of the previous html
 		 * so it can be set by the page
 		 */
-		if ($this->error_thrown) {
-			$template_file = ROOTPATH.$this->config['site path'].'/'.trim($this->error_thrown['template'], '/').$this->config['template extension'];
+		if ($this->errorThrown) {
+			$templateFile = ROOTPATH.$this->config['site path'].'/'.trim($this->errorThrown['template'], '/').$this->config['template extension'];
 
-			log_msg('View "'.$template_file.'".');
+			logMsg('View "'.$templateFile.'".');
 
-			$html = $this->handlebars->parse($template_file, $view_data);
+			$html = $this->handlebars->parse($templateFile, $viewData);
 		}
 
 		if ($echo) {
@@ -319,17 +321,17 @@ class App
 			throw new \Exception(__METHOD__.' input neither a string or array.');
 		}
 
-		log_msg('Error.');
+		logMsg('Error.');
 
 		$defaults = [
-						'msg'=>'Uh Oh!',
-						'status'=>404,
-						'template'=>$this->config['error template'],
-				];
+			'msg'=>'Uh Oh!',
+			'status'=>404,
+			'template'=>$this->config['error template'],
+		];
 
 		$options = array_merge($defaults, $options);
 
-		if (!$this->site_file_exists($options['template'])) {
+		if (!$this->siteFileExists($options['template'])) {
 			throw new \Exception(__METHOD__.' view "'.$options['template'].'" not found.');
 		}
 
@@ -337,12 +339,12 @@ class App
 		$this->template = false;
 
 		/* set the header responds code */
-		$this->responds_code($options['status']);
+		$this->respondsCode($options['status']);
 
-		log_msg('Template "'.$options['template'].'"', 'Status "'.$options['status'].'"', 'Message "'.$options['msg'].'".');
+		logMsg('Template "'.$options['template'].'"', 'Status "'.$options['status'].'"', 'Message "'.$options['msg'].'".');
 
 		/* save these for later */
-		$this->error_thrown = $options;
+		$this->errorThrown = $options;
 	}
 
 	/**
@@ -361,7 +363,7 @@ class App
 	 *
 	 * ```
 	 */
-	public function responds_code(int $code) : void
+	public function respondsCode(int $code) : void
 	{
 		http_response_code($code);
 	}
@@ -412,11 +414,11 @@ class App
 	 *
 	 * ```
 	 */
-	public function site_file_exists(string $template_name) : bool
+	public function siteFileExists(string $template_name) : bool
 	{
 		$path = ROOTPATH.$this->config['site path'].'/'.trim($template_name, '/').'.'.ltrim($this->config['template extension'], '.');
 
-		log_msg('Does "'.$path.'" exist.');
+		logMsg('Does "'.$path.'" exist.');
 
 		return file_exists($path);
 	}
@@ -437,9 +439,9 @@ class App
 	 *
 	 * ```
 	 */
-	public function load_remap_ini(string $filename) : array
+	public function loadRemapIni(string $filename) : array
 	{
-		log_msg('Load Remap INI file "'.$filename.'".');
+		logMsg('Load Remap INI file "'.$filename.'".');
 
 		$cache_file_path = $this->config['cache path'].'/app.remap.ini.php';
 
@@ -467,10 +469,10 @@ class App
 
 		return include $cache_file_path;
 	}
-	
-	public function exception_handler($exception) {
-	  echo '<div style="padding: 32px;font-family:monospace"><h2>Uh oh!<h2>Uncaught exception: '.$exception->getMessage().'</div>';
+
+	public function exceptionHandler($exception) {
+		echo '<div style="padding: 32px;font-family:monospace"><h2>Uh oh!<h2>Uncaught exception: '.$exception->getMessage().'</div>';
 	  exit(1);
 	}
-	
+
 } /* end class */

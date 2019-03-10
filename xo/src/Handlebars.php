@@ -46,28 +46,28 @@ class Handlebars
 	 *
 	 * @var string
 	 */
-	protected $template_extension = 'html';
+	protected $templateExtension = 'html';
 
 	/**
 	 * LightnCandy\LightnCandy Default Compile Flags
 	 *
 	 * @var integer
 	 */
-	protected $default_flags = LightnCandy::FLAG_HANDLEBARS | LightnCandy::FLAG_BESTPERFORMANCE | LightnCandy::FLAG_NAMEDARG | LightnCandy::FLAG_ADVARNAME | LightnCandy::FLAG_ERROR_LOG;
+	protected $defaultFlags = 0;
 
 	/**
 	 * Compile Cache Path (absolute)
 	 *
 	 * @var string
 	 */
-	protected $compiled_path;
+	protected $compiledPath;
 
 	/**
 	 * Handlebars Plugin Regular Expression
 	 *
 	 * @var string
 	 */
-	protected $plugin_regex = '(.*)\.plugin\.php';
+	protected $pluginRegex = '(.*)\.plugin\.php';
 
 	/**
 	 * Internal storage for loaded plugins
@@ -81,35 +81,35 @@ class Handlebars
 	 *
 	 * @var array
 	 */
-	protected $plugins_paths = [];
+	protected $pluginsPaths = [];
 
 	/**
 	 * Internal storage for folders to search for partials
 	 *
 	 * @var array
 	 */
-	protected $partials_paths = [];
+	protected $partialsPaths = [];
 
 	/**
 	 * Internal storage for partial name to file path
 	 *
 	 * @var array
 	 */
-	protected $partial_files = [];
+	protected $partialFiles = [];
 
 	/**
 	 * Internal storage to track if we've loaded partials.
 	 *
 	 * @var bool
 	 */
-	protected $partials_loaded = false;
+	protected $partialsLoaded = false;
 
 	/**
 	 * Internal storage to track if we've loaded plugins.
 	 *
 	 * @var bool
 	 */
-	protected $plugins_loaded = false;
+	protected $pluginsLoaded = false;
 
 	/**
 	 * Internal storage to track if we should recompile the next template request.
@@ -127,14 +127,17 @@ class Handlebars
 	 */
 	public function __construct()
 	{
+
+		$this->$defaultFlags = LightnCandy::FLAG_HANDLEBARS | LightnCandy::FLAG_BESTPERFORMANCE | LightnCandy::FLAG_NAMEDARG | LightnCandy::FLAG_ADVARNAME | LightnCandy::FLAG_ERROR_LOG;
+
 		$this
 			->debug(config('handlebars.debug', false))
-			->flags(config('handlebars.flags', $this->default_flags))
-			->template_extension(config('handlebars.template extension', $this->template_extension))
-			->plugin_regex(config('handlebars.plugin regex', $this->plugin_regex))
-			->compiled_path(config('handlebars.cache path', config('cache path')))
-			->add_partial_path(config('handlebars.partials path',null))
-			->add_plugin_path(config('handlebars.plugin path',null));
+			->flags(config('handlebars.flags', $this->$defaultFlags))
+			->templateExtension(config('handlebars.template extension', $this->templateExtension))
+			->pluginRegex(config('handlebars.plugin regex', $this->pluginRegex))
+			->compiledPath(config('handlebars.cache path', config('cache path')))
+			->addPartialPath(config('handlebars.partials path',null))
+			->addPluginPath(config('handlebars.plugin path',null));
 	}
 
 	/**
@@ -143,7 +146,7 @@ class Handlebars
 	 *
 	 * @access public
 	 *
-	 * @param $plugin_path
+	 * @param $pluginPath
 	 *
 	 * @throws
 	 * @return Handlebars_helper
@@ -153,22 +156,22 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	public function add_plugin_path($plugin_path) : Handlebars
+	public function addPluginPath($pluginPath) : Handlebars
 	{
-		if (is_array($plugin_path)) {
-			foreach ($plugin_path as $pp) {
-				$this->add_plugin_path($pp);
+		if (is_array($pluginPath)) {
+			foreach ($pluginPath as $pp) {
+				$this->addPluginPath($pp);
 			}
 
 			return $this;
 		}
 
-		if (!empty($plugin_path)) {
-			$path = '/'.trim($plugin_path, '/');
+		if (!empty($pluginPath)) {
+			$path = '/'.trim($pluginPath, '/');
 
-			$this->plugins_paths[$path] = $path;
+			$this->pluginsPaths[$path] = $path;
 
-			$this->plugins_loaded = false;
+			$this->pluginsLoaded = false;
 		}
 
 		return $this;
@@ -180,7 +183,7 @@ class Handlebars
 	 *
 	 * @access public
 	 *
-	 * @param $partials_path
+	 * @param $partialsPath
 	 *
 	 * @throws
 	 * @return Handlebars_helper
@@ -190,22 +193,22 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	public function add_partial_path($partials_path) : Handlebars
+	public function addPartialPath($partialsPath) : Handlebars
 	{
-		if (is_array($partials_path)) {
-			foreach ($partials_path as $pp) {
-				$this->add_partial_path($pp);
+		if (is_array($partialsPath)) {
+			foreach ($partialsPath as $pp) {
+				$this->addPartialPath($pp);
 			}
 
 			return $this;
 		}
 
-		if (!empty($partials_path)) {
-			$path = '/'.trim($partials_path, '/');
+		if (!empty($partialsPath)) {
+			$path = '/'.trim($partialsPath, '/');
 
-			$this->partials_paths[$path] = $path;
+			$this->partialsPaths[$path] = $path;
 
-			$this->partials_loaded = false;
+			$this->partialsLoaded = false;
 		}
 
 		return $this;
@@ -217,7 +220,7 @@ class Handlebars
 	 *
 	 * @access public
 	 *
-	 * @param string $template_extension
+	 * @param string $templateExtension
 	 *
 	 * @throws
 	 * @return Handlebars_helper
@@ -227,9 +230,9 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	public function template_extension(string $template_extension) : Handlebars
+	public function templateExtension(string $templateExtension) : Handlebars
 	{
-		$this->template_extension = '.'.trim($template_extension, '.');
+		$this->templateExtension = '.'.trim($templateExtension, '.');
 
 		return $this;
 	}
@@ -240,7 +243,7 @@ class Handlebars
 	 *
 	 * @access public
 	 *
-	 * @param string $plugin_regex
+	 * @param string $pluginRegex
 	 *
 	 * @throws
 	 * @return Handlebars_helper
@@ -250,9 +253,9 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	public function plugin_regex(string $plugin_regex) : Handlebars
+	public function pluginRegex(string $pluginRegex) : Handlebars
 	{
-		$this->plugin_extension = $plugin_regex;
+		$this->pluginExtension = $pluginRegex;
 
 		return $this;
 	}
@@ -319,7 +322,7 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	public function set_flag(int $flag) : Handlebars
+	public function setFlag(int $flag) : Handlebars
 	{
 		$this->flags = $this->flags | $flag;
 
@@ -342,7 +345,7 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	public function clear_flag(int $flag) : Handlebars
+	public function clearFlag(int $flag) : Handlebars
 	{
 		$this->flags = $this->flags & (~ $flag);
 
@@ -365,7 +368,7 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	public function debug(bool $bool=true) : Handlebars
+	public function debug(bool $bool = true) : Handlebars
 	{
 		$this->debug = $bool;
 
@@ -378,7 +381,7 @@ class Handlebars
 	 *
 	 * @access public
 	 *
-	 * @param string $compiled_path absolute path to cache folder
+	 * @param string $compiledPath absolute path to cache folder
 	 *
 	 * @throws
 	 * @return Handlebars_helper
@@ -388,23 +391,23 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	public function compiled_path(string $compiled_path) : Handlebars
+	public function compiledPath(string $compiledPath) : Handlebars
 	{
-		$this->compiled_path = '/'.trim($compiled_path, '/');
+		$this->compiledPath = '/'.trim($compiledPath, '/');
 
-		if (!file_exists($this->compiled_path)) {
+		if (!file_exists($this->compiledPath)) {
 			$umask = umask(0);
-			mkdir($this->compiled_path, 0777, true);
+			mkdir($this->compiledPath, 0777, true);
 			umask($umask);
 		}
 
 		/**
 		 * testing is writable in compile function
-		 * since we don't actually need to "write" 
-		 * when we call compiled_path() this
+		 * since we don't actually need to "write"
+		 * when we call compiledPath() this
 		 */
-		if (!realpath($this->compiled_path)) {
-			throw new \Exception(__METHOD__.' Cannot locate compiled handlebars folder "'.$this->compiled_path.'"');
+		if (!realpath($this->compiledPath)) {
+			throw new \Exception(__METHOD__.' Cannot locate compiled handlebars folder "'.$this->compiledPath.'"');
 		}
 
 		return $this;
@@ -426,23 +429,23 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	protected function load_plugins() : Handlebars
+	protected function loadPlugins() : Handlebars
 	{
-		$cache_file_path = config('cache path').'/handlebars.plugins.php';
+		$cacheFilePath = config('cache path').'/handlebars.plugins.php';
 
-		if ($this->debug || !file_exists($cache_file_path)) {
+		if ($this->debug || !file_exists($cacheFilePath)) {
 			$content = '';
 
 			/* attach the plugins */
-			foreach ($this->plugins_paths as $plugin_path) {
-				if (!file_exists(ROOTPATH.$plugin_path)) {
-					throw new \Exception('Plugin path "'.$plugin_path.'" not found.');
+			foreach ($this->pluginsPaths as $pluginPath) {
+				if (!file_exists(ROOTPATH.$pluginPath)) {
+					throw new \Exception('Plugin path "'.$pluginPath.'" not found.');
 				}
 
-				$plugin_files = new \RegexIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(ROOTPATH.$plugin_path)), '#^'.$this->plugin_regex.'$#i', \RecursiveRegexIterator::GET_MATCH);
+				$pluginFiles = new \RegexIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(ROOTPATH.$pluginPath)), '#^'.$this->pluginRegex.'$#i', \RecursiveRegexIterator::GET_MATCH);
 
-				foreach ($plugin_files as $plugin_file) {
-					$php = trim(php_strip_whitespace($plugin_file[0]));
+				foreach ($pluginFiles as $pluginFile) {
+					$php = trim(php_strip_whitespace($pluginFile[0]));
 
 					if (substr($php, 0, 5) == '<?php') {
 						$php = substr($php, 5);
@@ -461,20 +464,20 @@ class Handlebars
 			}
 
 			/* save it */
-			atomic_file_put_contents($cache_file_path, '<?php '.$content);
+			atomic_file_put_contents($cacheFilePath, '<?php '.$content);
 		}
 
 		$plugin = null;
 
 		/* include the cache file */
-		include $cache_file_path;
+		include $cacheFilePath;
 
 		if (is_array($plugin)) {
 			/* merge with what might already be in there */
 			$this->plugins = $plugin + $this->plugins;
 		}
 
-		$this->plugins_loaded = true;
+		$this->pluginsLoaded = true;
 
 		return $this;
 	}
@@ -495,36 +498,36 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	protected function load_partials() : Handlebars
+	protected function loadPartials() : Handlebars
 	{
-		$cache_file_path = config('cache path').'/handlebars.partials.php';
+		$cacheFilePath = config('cache path').'/handlebars.partials.php';
 
-		if ($this->debug || !file_exists($cache_file_path)) {
+		if ($this->debug || !file_exists($cacheFilePath)) {
 			$partials = [];
 
-			foreach ($this->partials_paths as $path) {
+			foreach ($this->partialsPaths as $path) {
 				if (!file_exists(ROOTPATH.$path)) {
 					throw new \Exception('Partials path "'.$path.'" not found.');
 				}
 
-				$partial_files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(ROOTPATH.$path));
+				$partialFiles = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(ROOTPATH.$path));
 
-				foreach ($partial_files as $partial_file) {
-					$partial_file = $partial_file->getPathName();
+				foreach ($partialFiles as $partialFile) {
+					$partialFile = $partialFile->getPathName();
 
-					if (!is_dir($partial_file)) {
-						$partials[strtolower(trim(substr(str_replace(ROOTPATH.$path, '', $partial_file), 0, -strlen($this->template_extension)), '/'))] = $partial_file;
+					if (!is_dir($partialFile)) {
+						$partials[strtolower(trim(substr(str_replace(ROOTPATH.$path, '', $partialFile), 0, -strlen($this->templateExtension)), '/'))] = $partialFile;
 					}
 				}
 			}
 
 			/* save it */
-			atomic_file_put_contents($cache_file_path, '<?php return '.var_export($partials, true).';');
+			atomic_file_put_contents($cacheFilePath, '<?php return '.var_export($partials, true).';');
 		}
 
-		$this->partial_files = include $cache_file_path;
+		$this->partialFiles = include $cacheFilePath;
 
-		$this->partials_loaded = true;
+		$this->partialsLoaded = true;
 
 		return $this;
 	}
@@ -546,7 +549,7 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	public function add_plugin(string $name, callable $plugin) : Handlebars
+	public function addPlugin(string $name, callable $plugin) : Handlebars
 	{
 		/* this is added dynamically to the plugin array so we don't / can't cache it */
 		$this->plugins[strtolower($name)] = $plugin;
@@ -570,10 +573,10 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	public function add_plugins(array $plugins) : Handlebars
+	public function addPlugins(array $plugins) : Handlebars
 	{
 		foreach ($plugins as $name=>$plugin) {
-			$this->add_plugin($name, $plugin);
+			$this->addPlugin($name, $plugin);
 		}
 
 		return $this;
@@ -585,7 +588,7 @@ class Handlebars
 	 *
 	 * @access public
 	 *
-	 * @param string $template_file
+	 * @param string $templateFile
 	 * @param array $data []
 	 *
 	 * @throws
@@ -596,13 +599,13 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	public function parse(string $template_file, array $data=[]) : string
+	public function parse(string $templateFile, array $data=[]) : string
 	{
-		if (!file_exists($template_file)) {
-			throw new \Exception('Template "'.$template_file.'" not found ');
+		if (!file_exists($templateFile)) {
+			throw new \Exception('Template "'.$templateFile.'" not found ');
 		}
 
-		return $this->parse_string(file_get_contents($template_file), $data, $template_file);
+		return $this->parseString(file_get_contents($templateFile), $data, $templateFile);
 	}
 
 	/**
@@ -611,7 +614,7 @@ class Handlebars
 	 *
 	 * @access public
 	 *
-	 * @param string $template_string
+	 * @param string $templateString
 	 * @param array $data []
 	 * @param string $type string
 	 *
@@ -623,18 +626,18 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	public function parse_string(string $template_string, array $data=[], string $type='string') : string
+	public function parseString(string $templateString, array $data=[], string $type='string') : string
 	{
-		$compiled_filename = $this->compile($template_string, $type);
+		$compiledFilename = $this->compile($templateString, $type);
 
-		if (!$compiled_filename) {
+		if (!$compiledFilename) {
 			throw new \Exception('Error compiling template.');
 		}
 
-		$template_php = include $compiled_filename;
+		$templatePhp = include $compiledFilename;
 
 		/* send data into the magic void... */
-		return $template_php($data);
+		return $templatePhp($data);
 	}
 
 	/**
@@ -643,7 +646,7 @@ class Handlebars
 	 *
 	 * @access protected
 	 *
-	 * @param string $compiled_filename
+	 * @param string $compiledFilename
 	 * @param string $template
 	 * @param string $type
 	 *
@@ -655,28 +658,28 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	protected function compile(string $template_string, string $type)
+	protected function compile(string $templateString, string $type) /* bool|string */
 	{
-		$compiled_filename = $this->compiled_path.'/'.md5($template_string).'.php';
+		$compiledFilename = $this->compiledPath.'/'.md5($templateString).'.php';
 
-		if (!is_writable(dirname($compiled_filename))) {
-			throw new \Exception(__METHOD__.' Cannot write to folder "'.$this->compiled_path.'"');
+		if (!is_writable(dirname($compiledFilename))) {
+			throw new \Exception(__METHOD__.' Cannot write to folder "'.$this->compiledPath.'"');
 		}
 
 		/* delete the compiled file if we are in debug mode or if the recompile flag is true */
 		if ($this->debug || $this->recompile) {
-			if (file_exists($compiled_filename)) {
-				if (!unlink($compiled_filename)) {
+			if (file_exists($compiledFilename)) {
+				if (!unlink($compiledFilename)) {
 					throw new \Exception('Cannot unlink compiled template file.');
 				}
 			}
 		}
 
-		if (!file_exists($compiled_filename)) {
-			$compiled_php = $this->_compile($template_string, $type);
+		if (!file_exists($compiledFilename)) {
+			$compiledPhp = $this->_compile($templateString, $type);
 
-			if (empty($compiled_php)) {
-				throw new \Exception('Error compiling handlebars template "'.$template.'".');
+			if (empty($compiledPhp)) {
+				throw new \Exception('Error compiling handlebars template "'.$type.'".');
 			}
 		}
 
@@ -685,10 +688,10 @@ class Handlebars
 
 		$success = false;
 
-		if (!empty($compiled_php)) {
-			file_put_contents($compiled_filename, '<?php '.$compiled_php.'?>');
+		if (!empty($compiledPhp)) {
+			file_put_contents($compiledFilename, '<?php '.$compiledPhp.'?>');
 
-			$success = $compiled_filename;
+			$success = $compiledFilename;
 		}
 
 		return $success;
@@ -711,26 +714,26 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	protected function _compile(string $template_string, string $type) : string
+	protected function _compile(string $templateString, string $type) : string
 	{
 		/* at first compile load everything */
-		if (!$this->partials_loaded) {
-			$this->load_partials();
+		if (!$this->partialsLoaded) {
+			$this->loadPartials();
 		}
 
-		if (!$this->plugins_loaded) {
-			$this->load_plugins();
+		if (!$this->pluginsLoaded) {
+			$this->loadPlugins();
 		}
 
 		$options = [
 			'flags'=>$this->flags,
 			'helpers'=>$this->plugins,
 			'renderex'=>'/* compiled '.str_replace(ROOTPATH, '', $type).' @ '.date('Y-m-d h:i:s e').' */', /* added to compiled PHP */
-			'partialresolver'=>[$this,'partial_loader'],
+			'partialresolver'=>[$this,'partialLoader'],
 		];
 
 		/* compile it into a php magic! */
-		return LightnCandy::compile($template_string, $options);
+		return LightnCandy::compile($templateString, $options);
 	}
 
 	/**
@@ -740,21 +743,21 @@ class Handlebars
 	 * @access public
 	 *
 	 * @param $context
-	 * @param string $partial_name
+	 * @param string $partialName
 	 *
 	 * @throws \Exception
 	 * @return string
 	 *
 	 */
-	public function partial_loader(array $context, string $partial_name) : string
+	public function partialLoader(array $context, string $partialName) : string
 	{
-		$key = trim(strtolower($partial_name), '/');
+		$key = trim(strtolower($partialName), '/');
 
-		if (!isset($this->partial_files[$key])) {
+		if (!isset($this->partialFiles[$key])) {
 			throw new \Exception('Partial "'.$key.'" not found ');
 		}
 
-		return file_get_contents($this->partial_files[$key]);
+		return file_get_contents($this->partialFiles[$key]);
 	}
 
 	/**
@@ -773,24 +776,13 @@ class Handlebars
 	 *
 	 * ```
 	 */
-	public function compile_all($root)
+	public function compileAll(string $rootPath) : void
 	{
-		if (empty(trim($this->template_extension, '.'))) {
-			throw new \Exception('Template extension is empty.');
-		}
-
-		$templates = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($root));
+		$templates = new \RegexIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(ROOTPATH.$pluginPath)), '#^.*.'.$this->templateExtension.'$#i', \RecursiveRegexIterator::GET_MATCH);
 
 		foreach ($templates as $template) {
-			if (!is_dir($template)) {
-				$fileinfo = pathinfo($template);
-
-				if ($fileinfo['extension'] === trim($this->template_extension, '.')) {
-					if (!$this->compile(file_get_contents($template), $template)) {
-						throw new \Exception('Error compiling handlebars template "'.$template.'".');
-					}
-				}
-			}
+			$this->compile(file_get_contents($template), $template);
 		}
 	}
+
 } /* end class */
